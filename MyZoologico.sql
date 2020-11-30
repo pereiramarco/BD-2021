@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Padrinho` (
   `idPadrinho` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `nib` VARCHAR(45) NOT NULL,
-  `morada` VARCHAR(45) NOT NULL,
   `cartao_cidadao` VARCHAR(15) NOT NULL,
   `nif` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`idPadrinho`))
@@ -144,7 +143,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Vacina` (
   `idVacina` INT NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
+  `descricao` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`idVacina`))
 ENGINE = InnoDB;
 
@@ -170,6 +169,7 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Animal_has_Vacina_has_Veterinario` (
   INDEX `fk_Animal_has_Vacina_Vacina1_idx` (`Vacina_idVacina` ASC) VISIBLE,
   INDEX `fk_Animal_has_Vacina_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
   INDEX `fk_Animal_has_Vacina_has_Veterinario_Veterinario1_idx` (`Veterinario_idVeterinario` ASC) VISIBLE,
+  PRIMARY KEY (`Animal_idAnimal`, `Vacina_idVacina`, `Veterinario_idVeterinario`),
   CONSTRAINT `fk_Animal_has_Vacina_Animal1`
     FOREIGN KEY (`Animal_idAnimal`)
     REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
@@ -192,12 +192,11 @@ ENGINE = InnoDB;
 -- Table `BD_Zoologico`.`Tipo_has_Zona`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Tipo_has_Zona` (
-  `idTipoZona` INT NOT NULL,
   `Zona_idZona` INT NOT NULL,
   `Tipo_idTipo` INT NOT NULL,
   INDEX `fk_Tipo_has_Zona_Zona1_idx` (`Zona_idZona` ASC) VISIBLE,
   INDEX `fk_Tipo_has_Zona_Tipo1_idx` (`Tipo_idTipo` ASC) VISIBLE,
-  PRIMARY KEY (`idTipoZona`),
+  PRIMARY KEY (`Zona_idZona`, `Tipo_idTipo`),
   CONSTRAINT `fk_Tipo_has_Zona_Tipo1`
     FOREIGN KEY (`Tipo_idTipo`)
     REFERENCES `BD_Zoologico`.`Tipo` (`idTipo`)
@@ -239,7 +238,6 @@ ENGINE = InnoDB;
 -- Table `BD_Zoologico`.`Especie_has_Vacina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Especie_has_Vacina` (
-  `idEspecieVacina` INT NOT NULL,
   `Especie_idEspecie` INT NOT NULL,
   `Vacina_idVacina` INT NOT NULL,
   `limite_temporal` FLOAT NOT NULL,
@@ -248,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Especie_has_Vacina` (
   `dosagem` FLOAT NOT NULL,
   INDEX `fk_Especie_has_Vacina_Vacina1_idx` (`Vacina_idVacina` ASC) VISIBLE,
   INDEX `fk_Especie_has_Vacina_Especie1_idx` (`Especie_idEspecie` ASC) VISIBLE,
-  PRIMARY KEY (`idEspecieVacina`),
+  PRIMARY KEY (`Especie_idEspecie`, `Vacina_idVacina`),
   CONSTRAINT `fk_Especie_has_Vacina_Especie1`
     FOREIGN KEY (`Especie_idEspecie`)
     REFERENCES `BD_Zoologico`.`Especie` (`idEspecie`)
