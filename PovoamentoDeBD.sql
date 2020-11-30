@@ -84,21 +84,70 @@ INSERT INTO Veterinario VALUES (17,"Sara Santos");
 
 Select * FROM Veterinario;
 
-INSERT INTO Vacina VALUES (1,"Canine Distemper"); -- dog like animals
-INSERT INTO Vacina VALUES (2,"Raiva"); -- all
-INSERT INTO Vacina VALUES (3,"Feline Panleukopenia   (FPV)"); -- cat like animals
-INSERT INTO Vacina VALUES (4,"Parvovirus Disease"); -- raccoon like animals
-INSERT INTO Vacina VALUES (5,"Brucellosis"); -- ursos
-INSERT INTO Vacina VALUES (6,"Diphtheria"); -- apes (primates)
-INSERT INTO Vacina VALUES (7,"Tetano"); -- all
-INSERT INTO Vacina VALUES (8,"Clostridial Diseases"); -- cow like and sheep (bovid and ovicaprin)
-INSERT INTO Vacina VALUES (9,"Malignant Catarrhal Fever   MCF"); --deer (cervid)
-INSERT INTO Vacina VALUES (10,"Clostridium perfringens"); -- camels like (camelids)
-INSERT INTO Vacina VALUES (11,"West Nile Virus  WNV"); -- horses like (equids)
-INSERT INTO Vacina VALUES (12,"The Enteric Clostridial Diseases"); -- girafes and okapis (giraffids)
-INSERT INTO Vacina VALUES (13,"Leptospirosis "); -- rhinos tapirs pig like animals e animais marinhos
-INSERT INTO Vacina VALUES (14,"Avian polyomavirus"); -- birds
-INSERT INTO Vacina VALUES (15,"Vacina destinada a Micobacteriose"); -- marine mammals
-INSERT INTO Vacina VALUES (16,"Vacina destinada a Infeções Respiratórias"); -- all tirando peixes e mamiferos marinhos
-INSERT INTO Vacina VALUES (17,"");
-INSERT INTO Vacina VALUES (18,"");
+INSERT INTO Vacina VALUES (1,"Vacina de temperamento canino"); -- dog like animals and bears
+INSERT INTO Vacina VALUES (2,"Vacina da Raiva"); -- all
+INSERT INTO Vacina VALUES (3,"Vacina da Panleukopenia"); -- cat like animals
+INSERT INTO Vacina VALUES (4,"Vacina da Parvovirus"); -- raccoon like animals
+INSERT INTO Vacina VALUES (5,"Vacina da Brucellosis"); -- ursos
+INSERT INTO Vacina VALUES (6,"Vacina da Diphtheria"); -- apes (primates)
+INSERT INTO Vacina VALUES (7,"Vacina do Tetano"); -- all
+INSERT INTO Vacina VALUES (8,"Vacina da Clostridial"); -- cow like and sheep (bovid and ovicaprin) girafes and okapis (giraffids)
+INSERT INTO Vacina VALUES (9,"Vacina da Febre Maligna Catarrhal"); -- deer (cervid)
+INSERT INTO Vacina VALUES (10,"Vacina de Clostridium perfringens"); -- camels like (camelids)
+INSERT INTO Vacina VALUES (11,"Vacina do Virus do Nilo Oeste"); -- horses like (equids)
+INSERT INTO Vacina VALUES (12,"Vacina da Leptospirosis "); -- rhinos tapirs pig like animals e animais marinhos
+INSERT INTO Vacina VALUES (13,"Vacina do polyomavirus"); -- birds
+INSERT INTO Vacina VALUES (14,"Vacina destinada a Micobacteriose"); -- marine mammals
+INSERT INTO Vacina VALUES (15,"Vacina destinada a Infeções Respiratórias"); -- all tirando peixes e mamiferos marinhos
+
+SELECT * FROM Vacina;
+
+INSERT INTO Especie VALUES (1,"Lince-ibérico","Lynx pardinus",32); -- Comprimento: 68-82 cm Altura: 40-50 cm PESO: 7-14 kg Floresta
+INSERT INTO Especie VALUES (2,"Leão-africano","Panthera leo bleyenberghi",32); -- Comprimento: 1,6-1,9 m Altura: 1,2 m Peso: 120-180 kg||| F :Comprimento: 1,7-2,5 m Altura: 1,2 m Peso: 150-240 kg Savana
+INSERT INTO Especie VALUES (3,"Macaco-capuchinho-de-peito-amarelo","Cebus xanthosternos",32); -- Comprimento: 36-42 cm Peso: 3 kg
+INSERT INTO Especie VALUES (4,"Macaco-do-japão","Macaca fuscata",32); -- Comprimento: ≤65 cm Peso: ≤18 kg
+INSERT INTO Especie VALUES (5,"Pantera-nebulosa","Neofelis nebulosa",32); -- Comprimento: 68-106 cm Peso: 
+INSERT INTO Especie VALUES (6,"Panda-vermelho","Ailurus fulgens",32); -- Comprimento: 51-73 cm Peso: 
+INSERT INTO Especie VALUES (7,"Orangotango-de-sumatra","Pongo abelii",32); -- Peso: 
+INSERT INTO Especie VALUES (8,"Okapi","Okapia johnstoni",32); -- Comprimento: ≤2 m Peso: 
+INSERT INTO Especie VALUES (9,"Pitão-real","Python regius",32); -- Comprimento: 1,2 – 1,8 m Peso: 
+INSERT INTO Especie VALUES (10,"Piranha-vermelha","Pygocentrus nattereri",32); -- Comprimento: 33 cm Peso: 
+INSERT INTO Especie VALUES (11,"Rinoceronte-branco","Ceratotherium simum",32); -- Comprimento: ≤4 m Peso: 
+INSERT INTO Especie VALUES (12,"Rinoceronte-indiano","Rhinoceros unicornis",32); -- Comprimento: ≤3,5 m Peso: 
+INSERT INTO Especie VALUES (13,"Tartaruga-aligátor-comum","Macrochelys temminckii",32); -- Comprimento: 35-80 cm Peso: 
+INSERT INTO Especie VALUES (14,"Tarântula-rosa","Grammostola rosea",32); -- Comprimento: 14 cm Peso: 
+INSERT INTO Especie VALUES (15,"Suricata","Suricata suricatta",32); -- Peso: 
+INSERT INTO Especie VALUES (16,"Tigre-branco","Panthera tigris",32); -- F: Comprimento: 2,1-2,7 m Peso:  M:Comprimento: 2,6-3,1 m Peso: 
+INSERT INTO Especie VALUES (17,"Tigre-da-sibéria","Panthera tigris altaica",32); -- Comprimento: 2,4-3,3 m Peso: 
+INSERT INTO Especie VALUES (18,"Tartaruga-estrela-indiana","Geochelone elegans",32); -- Comprimento: 15-38 cm Peso: 
+INSERT INTO Especie VALUES (19,"Tartaruga-espinhosa","Heosemys spinosa",32); -- Comprimento: 17-22 cm Peso: 
+INSERT INTO Especie VALUES (20,"Zebra-de-grevy","Equus grevyi",32); -- Comprimento: ≤3 m Peso: 
+INSERT INTO Especie VALUES (21,"Urso-pardo","Ursus arctos",32); -- Comprimento: 1,5-2,8 m Peso: 
+INSERT INTO Especie VALUES (22,"Aligátor-americano","Alligator mississippiensis",32); -- F: Comprimento: 3 m Peso:  | M: Comprimento: 4,5 m Peso: 
+INSERT INTO Especie VALUES (23,"Anaconda-amarela","Eunectes notaeus",32); -- Comprimento: 3-4 m Peso: 
+INSERT INTO Especie VALUES (24,"Araçari-verde","Pteroglossus viridis",32); -- Comprimento: 30-39 cm Peso: 
+INSERT INTO Especie VALUES (25,"Adax","Addax nasomaculatus",32); -- Comprimento: <1,30 m Peso: 
+INSERT INTO Especie VALUES (26,"Arara-jacinta","Anodorhynchus hyacinthinus",32); -- Comprimento: 100 cm Peso: 
+INSERT INTO Especie VALUES (27,"Arara-escarlate","Ara macao",32); -- Comprimento: 84-89 cm Peso: 
+INSERT INTO Especie VALUES (28,"Axolote","Ambystoma mexicanum",32); -- Comprimento: <30cm Peso: 
+INSERT INTO Especie VALUES (29,"Bisonte-americano","Bison bison bison",32); -- Comprimento: <3,5 m Peso: 
+INSERT INTO Especie VALUES (30,"Boa-da-jamaica","Epicrates subflavus",32); -- Comprimento: 2 - 2,5 m
+INSERT INTO Especie VALUES (31,"Calau-da-papuásia","Aceros plicatus",32); -- Comprimento: 65-85 cm
+INSERT INTO Especie VALUES (32,"Boa-de-madagáscar","Sanzinia madagascariensis",32); -- Comprimento: até 2,5 m
+INSERT INTO Especie VALUES (33,"Búfalo-africano","Syncerus caffer caffer",32); -- Comprimento: 2,4-3,4 m
+INSERT INTO Especie VALUES (34,"Camelo","Camelus ferus",32); -- Comprimento: 250-300 cm
+INSERT INTO Especie VALUES (35,"Canguru-vermelho","Macropus rufus / Osphranter rufus",32); -- 
+INSERT INTO Especie VALUES (36,"Dragão-de-komodo","Varanus komodoensis",32); -- Comprimento: ≤3 m
+INSERT INTO Especie VALUES (37,"Elefante-africano","Loxodonta africana",32); -- Comprimento: 6-7,5 m
+INSERT INTO Especie VALUES (38,"Crocodilo-do-nilo","Crocodylus niloticus",32); -- Comprimento: 5,5 m
+INSERT INTO Especie VALUES (39,"Chimpanzé","Pan troglodytes",32); -- 
+INSERT INTO Especie VALUES (40,"Chita","Acinonyx jubatus",32); -- Comprimento: 1,1-1,3 m
+INSERT INTO Especie VALUES (41,"Ema","Dromaius novaehollandiae",32); -- 
+INSERT INTO Especie VALUES (42,"Flamingo-rubro","Phoenicopterus ruber",32); -- 
+INSERT INTO Especie VALUES (43,"Golfinho-roaz","Tursiops truncatus",32); -- Comprimento: ≤3,9 m
+INSERT INTO Especie VALUES (44,"Gorila-ocidental-das-terras-baixas","Gorilla gorilla gorilla",32); -- F: Comprimento: 1,5 m | M: Comprimento: 1,7 m 
+INSERT INTO Especie VALUES (45,"Hipopótamo","Hippopotamus amphibius",32); -- Comprimento: ≤5,5 m
+INSERT INTO Especie VALUES (46,"Iguana-rinoceronte","Cyclura cornuta",32); -- Comprimento: 1,2m
+INSERT INTO Especie VALUES (47,"Iguana-verde","Iguana iguana",32); -- Comprimento: 1,5-2 m
+INSERT INTO Especie VALUES (48,"Jaguar","Panthera onca onca",32); -- Comprimento: 1,15-1,70 cm
+INSERT INTO Especie VALUES (49,"Íbis-escarlate","Eudocimus ruber",32); -- Comprimento: 55-76 cm
