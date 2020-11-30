@@ -11,66 +11,101 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema BD_Zoologico
 -- -----------------------------------------------------
-DROP SCHEMA BD_Zoologico;
-CREATE SCHEMA BD_Zoologico;
-USE BD_Zoologico;
-
+CREATE SCHEMA IF NOT EXISTS `BD_Zoologico` ;
 -- -----------------------------------------------------
--- Table `BD_Zoologico`.`Contacto`
+-- Schema test
 -- -----------------------------------------------------
-CREATE TABLE Contacto (
-  `idContacto` INT NOT NULL,
-  `contacto` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idContacto`))
-ENGINE = InnoDB;
-
+USE `BD_Zoologico` ;
 
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Padrinho`
 -- -----------------------------------------------------
-CREATE TABLE Padrinho (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Padrinho` (
   `idPadrinho` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `nib` VARCHAR(45) NOT NULL,
   `morada` VARCHAR(45) NOT NULL,
   `cartao_cidadao` VARCHAR(15) NOT NULL,
   `nif` VARCHAR(15) NOT NULL,
-  `Contacto_idContacto` INT NOT NULL,
-  PRIMARY KEY (`idPadrinho`),
-  INDEX `fk_Padrinho_Contacto1_idx` (`Contacto_idContacto` ASC) VISIBLE,
-  CONSTRAINT `fk_Padrinho_Contacto1`
-    FOREIGN KEY (`Contacto_idContacto`)
-    REFERENCES `BD_Zoologico`.`Contacto` (`idContacto`)
+  PRIMARY KEY (`idPadrinho`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `BD_Zoologico`.`Zona`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Zona` (
+  `idZona` INT NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idZona`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `BD_Zoologico`.`Recinto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Recinto` (
+  `ID` INT NOT NULL,
+  `coord_y` INT NOT NULL,
+  `coord_x` INT NOT NULL,
+  `area` FLOAT NOT NULL,
+  `bioma` VARCHAR(100) NOT NULL,
+  `Zona_idZona` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_Recinto_Zona1_idx` (`Zona_idZona` ASC) VISIBLE,
+  CONSTRAINT `fk_Recinto_Zona1`
+    FOREIGN KEY (`Zona_idZona`)
+    REFERENCES `BD_Zoologico`.`Zona` (`idZona`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `BD_Zoologico`.`Especie`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Especie` (
+  `idEspecie` INT NOT NULL,
+  `nome_comum` VARCHAR(45) NOT NULL,
+  `nome_cientifico` VARCHAR(45) NOT NULL,
+  `valor_de_apadrinhamento` FLOAT NOT NULL,
+  PRIMARY KEY (`idEspecie`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Animal`
 -- -----------------------------------------------------
-CREATE TABLE Animal (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Animal` (
   `idAnimal` INT NOT NULL,
   `genero` VARCHAR(20) NOT NULL,
   `nome` VARCHAR(100) NULL,
   `data_nascimento` DATE NOT NULL,
   `altura` DECIMAL(3,2) NOT NULL,
   `comprimento` DECIMAL(3,2) NOT NULL,
-  `peso` DECIMAL(7,2) NOT NULL,
+  `largura` DECIMAL(3,2) NOT NULL,
+  `peso` DECIMAL(5,2) NOT NULL,
   `vivo` TINYINT NOT NULL,
-  `Animal_idAnimal` INT NULL,
   `Padrinho_idPadrinho` INT NULL,
+  `Recinto_ID` INT NOT NULL,
+  `Especie_idEspecie` INT NOT NULL,
   PRIMARY KEY (`idAnimal`),
-  INDEX `fk_Animal_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
   INDEX `fk_Animal_Padrinho1_idx` (`Padrinho_idPadrinho` ASC) VISIBLE,
-  CONSTRAINT `fk_Animal_Animal1`
-    FOREIGN KEY (`Animal_idAnimal`)
-    REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_Animal_Recinto1_idx` (`Recinto_ID` ASC) VISIBLE,
+  INDEX `fk_Animal_Especie1_idx` (`Especie_idEspecie` ASC) VISIBLE,
   CONSTRAINT `fk_Animal_Padrinho1`
     FOREIGN KEY (`Padrinho_idPadrinho`)
     REFERENCES `BD_Zoologico`.`Padrinho` (`idPadrinho`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Animal_Recinto1`
+    FOREIGN KEY (`Recinto_ID`)
+    REFERENCES `BD_Zoologico`.`Recinto` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Animal_Especie1`
+    FOREIGN KEY (`Especie_idEspecie`)
+    REFERENCES `BD_Zoologico`.`Especie` (`idEspecie`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -79,7 +114,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Tipo`
 -- -----------------------------------------------------
-CREATE TABLE Tipo (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Tipo` (
   `idTipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `preco` FLOAT NOT NULL,
@@ -90,7 +125,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Bilhete`
 -- -----------------------------------------------------
-CREATE TABLE Bilhete (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Bilhete` (
   `idBilhete` INT NOT NULL,
   `momento_aquisicao` DATETIME NOT NULL,
   `Tipo_idTipo` INT NOT NULL,
@@ -105,48 +140,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `BD_Zoologico`.`Cliente`
--- -----------------------------------------------------
-CREATE TABLE Cliente (
-  `idCliente` INT NOT NULL,
-  `idade` INT UNSIGNED NOT NULL,
-  `nome` VARCHAR(100) NOT NULL,
-  `Bilhete_idBilhete` INT NOT NULL,
-  `cartao_cidadao` VARCHAR(15) NOT NULL,
-  PRIMARY KEY (`idCliente`),
-  INDEX `fk_Cliente_Bilhete1_idx` (`Bilhete_idBilhete` ASC) VISIBLE,
-  CONSTRAINT `fk_Cliente_Bilhete1`
-    FOREIGN KEY (`Bilhete_idBilhete`)
-    REFERENCES `BD_Zoologico`.`Bilhete` (`idBilhete`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `BD_Zoologico`.`Recinto`
--- -----------------------------------------------------
-CREATE TABLE Recinto (
-  `ID` INT NOT NULL,
-  `coord_y` INT NOT NULL,
-  `coord_x` INT NOT NULL,
-  `area` FLOAT NOT NULL,
-  `bioma` VARCHAR(100) NOT NULL,
-  `Animal_idAnimal` INT NOT NULL,
-  INDEX `fk_Recinto_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `fk_Recinto_Animal1`
-    FOREIGN KEY (`Animal_idAnimal`)
-    REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Vacina`
 -- -----------------------------------------------------
-CREATE TABLE Vacina (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Vacina` (
   `idVacina` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idVacina`))
@@ -156,24 +152,17 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Veterinario`
 -- -----------------------------------------------------
-CREATE TABLE Veterinario (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Veterinario` (
   `idVeterinario` INT NOT NULL,
-  `nome` VARCHAR(45) NULL,
-  `Contacto_idContacto` INT NOT NULL,
-  PRIMARY KEY (`idVeterinario`),
-  INDEX `fk_Veterinario_Contacto1_idx` (`Contacto_idContacto` ASC) VISIBLE,
-  CONSTRAINT `fk_Veterinario_Contacto1`
-    FOREIGN KEY (`Contacto_idContacto`)
-    REFERENCES `BD_Zoologico`.`Contacto` (`idContacto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `nome` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idVeterinario`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Animal_has_Vacina_has_Veterinario`
 -- -----------------------------------------------------
-CREATE TABLE Animal_has_Vacina_has_Veterinario (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Animal_has_Vacina_has_Veterinario` (
   `Animal_idAnimal` INT NOT NULL,
   `Vacina_idVacina` INT NOT NULL,
   `Veterinario_idVeterinario` INT NOT NULL,
@@ -200,26 +189,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `BD_Zoologico`.`Zona`
--- -----------------------------------------------------
-CREATE TABLE Zona (
-  `idZona` INT NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
-  `Recinto_ID` INT NOT NULL,
-  PRIMARY KEY (`idZona`),
-  INDEX `fk_Zona_Recinto1_idx` (`Recinto_ID` ASC) VISIBLE,
-  CONSTRAINT `fk_Zona_Recinto1`
-    FOREIGN KEY (`Recinto_ID`)
-    REFERENCES `BD_Zoologico`.`Recinto` (`ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Tipo_has_Zona`
 -- -----------------------------------------------------
-CREATE TABLE Tipo_has_Zona (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Tipo_has_Zona` (
   `idTipoZona` INT NOT NULL,
   `Zona_idZona` INT NOT NULL,
   `Tipo_idTipo` INT NOT NULL,
@@ -240,19 +212,24 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `BD_Zoologico`.`Especie`
+-- Table `BD_Zoologico`.`Contacto`
 -- -----------------------------------------------------
-CREATE TABLE Especie (
-  `idEspecie` INT NOT NULL,
-  `nome_comum` VARCHAR(45) NOT NULL,
-  `nome_cientifico` VARCHAR(45) NOT NULL,
-  `valor_de_apadrinhamento` FLOAT NOT NULL,
-  `Animal_idAnimal` INT NOT NULL,
-  PRIMARY KEY (`idEspecie`),
-  INDEX `fk_Especie_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
-  CONSTRAINT `fk_Especie_Animal1`
-    FOREIGN KEY (`Animal_idAnimal`)
-    REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Contacto` (
+  `idContacto` INT NOT NULL,
+  `contacto` VARCHAR(50) NOT NULL,
+  `Padrinho_idPadrinho` INT NOT NULL,
+  `Veterinario_idVeterinario` INT NOT NULL,
+  PRIMARY KEY (`idContacto`),
+  INDEX `fk_Contacto_Padrinho1_idx` (`Padrinho_idPadrinho` ASC) VISIBLE,
+  INDEX `fk_Contacto_Veterinario1_idx` (`Veterinario_idVeterinario` ASC) VISIBLE,
+  CONSTRAINT `fk_Contacto_Padrinho1`
+    FOREIGN KEY (`Padrinho_idPadrinho`)
+    REFERENCES `BD_Zoologico`.`Padrinho` (`idPadrinho`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Contacto_Veterinario1`
+    FOREIGN KEY (`Veterinario_idVeterinario`)
+    REFERENCES `BD_Zoologico`.`Veterinario` (`idVeterinario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -261,7 +238,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `BD_Zoologico`.`Especie_has_Vacina`
 -- -----------------------------------------------------
-CREATE TABLE Especie_has_Vacina (
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Especie_has_Vacina` (
   `idEspecieVacina` INT NOT NULL,
   `Especie_idEspecie` INT NOT NULL,
   `Vacina_idVacina` INT NOT NULL,
@@ -280,6 +257,28 @@ CREATE TABLE Especie_has_Vacina (
   CONSTRAINT `fk_Especie_has_Vacina_Vacina1`
     FOREIGN KEY (`Vacina_idVacina`)
     REFERENCES `BD_Zoologico`.`Vacina` (`idVacina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `BD_Zoologico`.`Animal_has_Animal`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Animal_has_Animal` (
+  `Animal_idAnimal` INT NOT NULL,
+  `Animal_idAnimal1` INT NOT NULL,
+  INDEX `fk_Animal_has_Animal_Animal2_idx` (`Animal_idAnimal1` ASC) VISIBLE,
+  INDEX `fk_Animal_has_Animal_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
+  PRIMARY KEY (`Animal_idAnimal`, `Animal_idAnimal1`),
+  CONSTRAINT `fk_Animal_has_Animal_Animal1`
+    FOREIGN KEY (`Animal_idAnimal`)
+    REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Animal_has_Animal_Animal2`
+    FOREIGN KEY (`Animal_idAnimal1`)
+    REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
