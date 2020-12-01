@@ -1,153 +1,1411 @@
 -- -------ANIMAIS---------
 
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (1,"Masculino","Tigre da Sibéria",'2000-12-31',1,1.8,225,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo,Animal_idAnimal) VALUES (2,"Feminino","Tigre-da-Sibéria",'2020-11-30',0.5,0.7,200,1,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (3,"Masculino","Falcão",'2012-1-11',0.5,1.5,12,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (4,"Feminino","Elefante Africano",'1970-4-16',2.7,3.8,3200,0);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (5,"Feminino","Elefante Africano",'1975-2-24',2.4,3.5,2700,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (6,"Masculino","Leão Africano",'1981-9-21',1.1,1.8,175,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (7,"Masculino","Tubarão Branco",'1992-10-18',1,3.2,405,1);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (8,"Feminino","Tartaruga",'1983-7-19',0.7,2.5,325,0);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (8,"Feminino","Pitão",'1983-7-19',0.7,2.5,325,0);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (8,"Feminino","Crocodilo Africano",'1983-7-19',0.7,2.5,325,0);
-INSERT Into Animal (idAnimal,genero,nome,data_nascimento,altura,comprimento,peso,vivo) VALUES (8,"Masculino","",'1983-7-19',0.7,2.5,325,0);
-
-SELECT * FROM Animal;
-
 USE `BD_Zoologico` ;
-
-INSERT INTO Padrinho VALUES (1,"Ofélia Oliveira","00255376308242550396","5974410212 5 YX1","376812472");
-INSERT INTO Padrinho VALUES (2,"Hélio Reis","02352663637392172017","6358036756 9 ZY1","560736851");
-INSERT INTO Padrinho VALUES (3,"Ofélia Braga","00597072879138176481","9410725283 8 XX2","686112760");
-INSERT INTO Padrinho VALUES (4,"Sara Estéves","00431981398008546738","4426077640 3 YZ2","942002080");
-INSERT INTO Padrinho VALUES (5,"Fabiano Oliveira","00457861707375255486","0951081908 7 YZ1","802827737");
-INSERT INTO Padrinho VALUES (6,"Rafaela Barros","01934379016965461237","5142438671 3 XY2","462348273");
-INSERT INTO Padrinho VALUES (7,"Isabel Araújo","00454353131501471323","4802257324 1 YY2","248748891");
-INSERT INTO Padrinho VALUES (8,"Natália D'cruze","00452001945288113894","2810171364 4 YX2","004159134");
-INSERT INTO Padrinho VALUES (9,"Larissa Melo","00436053640214382946","0404489361 2 ZZ2","766902811");
-INSERT INTO Padrinho VALUES (10,"Silas Barros","00431703201016175200","4620504255 5 YX1","681918680");
-INSERT INTO Padrinho VALUES (11,"Cecília Nogueira","00434462707299280883","7887423168 1 ZY2","210928728");
-INSERT INTO Padrinho VALUES (12,"Pablo Carvalho","02693683613807975045","5220293198 3 YX2","734585987");
-INSERT INTO Padrinho VALUES (13,"Marcelo Estéves","00616716121794850014","1949831541 6 YX1","809163000");
-INSERT INTO Padrinho VALUES (14,"Amélia Nogueira","00462925165458824655","6580320500 1 ZX2","479224765");
-INSERT INTO Padrinho VALUES (15,"Yango Melo","00220791662716224768","7975679486 6 ZY2","036448742");
-INSERT INTO Padrinho VALUES (16,"Felícia Moreira","00595459379269696891","3437733872 1 ZX2","104011838");
-INSERT INTO Padrinho VALUES (17,"Suélen Lemos","00651403201898632336","1196284126 4 ZZ1","834417558");
-INSERT INTO Padrinho VALUES (18,"Carla Oliveira","02352766854506125872","9248523193 2 XZ2","570628860");
-INSERT INTO Padrinho VALUES (19,"Suélen Araújo","01936333324637804099","0374167702 6 ZX1","089606386");
-INSERT INTO Padrinho VALUES (20,"Suélen Martins","00355315293219137237","1899870304 8 YX2","726141682");
-INSERT INTO Padrinho VALUES (21,"Warley Braga","00220395307394965315","1533230483 8 YZ2","743426767");
-INSERT INTO Padrinho VALUES (22,"Maria Silva","00368027005970107063","8129059721 3 XY2","185058346");
-INSERT INTO Padrinho VALUES (23,"Meire Silva","02356819317021703602","4313441046 1 YZ2","694758373");
-INSERT INTO Padrinho VALUES (24,"Isabela Pereira","00362917465147482737","7076388804 6 XX2","383618167");
-
-Select * From Padrinho;
 
 INSERT INTO Zona VALUES (1,"Aviário");
 INSERT INTO Zona VALUES (2,"Templo dos Primatas");
 INSERT INTO Zona VALUES (3,"Encosta dos Felinos");
 INSERT INTO Zona VALUES (4,"Reptilarium");
 INSERT INTO Zona VALUES (5,"África Selvagem");
-INSERT INTO Zona VALUES (6,"Quinta");
-INSERT INTO Zona VALUES (7,"Austrália");
-INSERT INTO Zona VALUES (8,"Polos");
-INSERT INTO Zona VALUES (9,"Ásia");
-INSERT INTO Zona VALUES (10,"Atlântida");
+INSERT INTO Zona VALUES (6,"Austrália");
+INSERT INTO Zona VALUES (7,"Pólos");
+INSERT INTO Zona VALUES (8,"Ásia");
+INSERT INTO Zona VALUES (9,"Atlântida");
 
-Select * From Zona;
+INSERT INTO Tipo VALUES (1,"Dança das Aves",14.2);
+INSERT INTO Tipo VALUES (2,"Caminhantes Terrestres",22.2);
+INSERT INTO Tipo VALUES (3,"Zona dos Répteis",7.2);
+INSERT INTO Tipo VALUES (4,"Paraíso Submerso",16.2);
+INSERT INTO Tipo VALUES (5,"Acesso Total",30.4);
 
-INSERT INTO TIPO VALUES (1,14.2,"Dança das Aves");
-INSERT INTO TIPO VALUES (2,22.2,"Caminhantes Terrestres");
-INSERT INTO TIPO VALUES (3,7.2,"Zona dos Répteis");
-INSERT INTO TIPO VALUES (4,16.2,"Paraíso Submerso");
-INSERT INTO TIPO VALUES (5,14.2,"Acesso Total");
+INSERT INTO Padrinho VALUES (1,"Eduardo Franco","00658348637822257269","7206761084 3 YX2","962908145");
+INSERT INTO Padrinho VALUES (2,"Morgana Albuquerque","00229780866547505703","1177767406 6 XX2","930496034");
+INSERT INTO Padrinho VALUES (3,"Morgana Carvalho","00255987266534834745","9666596779 2 ZY1","821945719");
+INSERT INTO Padrinho VALUES (4,"Sirineu Lemos","00364353520880403900","1363405045 4 YX2","027658365");
+INSERT INTO Padrinho VALUES (5,"Frederico Martins","00451119409014376778","9650641643 9 ZX2","224951973");
+INSERT INTO Padrinho VALUES (6,"Hélio Moreira","51806006291940192966","2310847419 4 XZ2","937035500");
+INSERT INTO Padrinho VALUES (7,"Pablo Saraiva","00103254767555075478","3720455507 2 ZY2","927533120");
+INSERT INTO Padrinho VALUES (8,"Gustavo Moraes","00070043229473590679","3456066658 1 ZY2","535512022");
+INSERT INTO Padrinho VALUES (9,"Heitor Lemos","00109501683156018024","5005263739 5 YZ2","098404138");
+INSERT INTO Padrinho VALUES (10,"Rafael Reis","00437447599782019527","4508439535 2 XZ1","663329487");
+INSERT INTO Padrinho VALUES (11,"Júlio Moraes","00070472124826901451","0904051192 9 ZZ2","293691802");
+INSERT INTO Padrinho VALUES (12,"Águeda Silva","00345365279737528203","1126247408 4 YZ1","397881382");
+INSERT INTO Padrinho VALUES (13,"Sara Araújo","00655839800303354898","1903686702 9 ZZ2","518543964");
+INSERT INTO Padrinho VALUES (14,"Maria Braga","02353079418917663101","8254362088 7 YY1","615635905");
+INSERT INTO Padrinho VALUES (15,"Washington Santos","51808189893941406680","0759099509 6 ZY2","480578122");
+INSERT INTO Padrinho VALUES (16,"Águeda Lemos","00333841088376042421","3324419333 2 YZ1","549207734");
+INSERT INTO Padrinho VALUES (17,"Simão Araújo","00192018918276597948","9561439571 1 ZZ1","378501285");
+INSERT INTO Padrinho VALUES (18,"Júlio Moreira","02696878734462748557","6785752024 8 XY2","211296319");
+INSERT INTO Padrinho VALUES (19,"Fábio Estéves","01939443778336066508","4335966307 7 XX1","280010636");
+INSERT INTO Padrinho VALUES (20,"Karla Silva","02696955737952498275","6102262227 6 ZX1","863940610");
+INSERT INTO Padrinho VALUES (21,"César Carvalho","00072880002390074339","0822456612 3 ZX1","882363599");
+INSERT INTO Padrinho VALUES (22,"Sílvia Nogueira","00222065406218771667","6360669796 3 XZ1","997663176");
+INSERT INTO Padrinho VALUES (23,"Fabrícia Estéves","00460080477646287483","6700483721 7 YX1","867192006");
+INSERT INTO Padrinho VALUES (24,"Vitória Franco","00222321893393702481","1867244994 1 YZ1","138089171");
+INSERT INTO Padrinho VALUES (25,"Suélen Saraiva","00321778306323244320","8543604473 7 YZ1","195493111");
 
-Select * From TIPO;
-
-INSERT INTO Veterinario VALUES (1,"Célia Moreira");
-INSERT INTO Veterinario VALUES (2,"Lorraine Saraiva");
-INSERT INTO Veterinario VALUES (3,"Alessandra Oliveira");
-INSERT INTO Veterinario VALUES (4,"Isabel Oliveira");
-INSERT INTO Veterinario VALUES (5,"Dalila Costa");
-INSERT INTO Veterinario VALUES (6,"Tertuliano Reis");
-INSERT INTO Veterinario VALUES (7,"Ígor Nogueira");
-INSERT INTO Veterinario VALUES (8,"Carlos Melo");
-INSERT INTO Veterinario VALUES (9,"Frederico Estéves");
-INSERT INTO Veterinario VALUES (10,"Hugo D'cruze");
-INSERT INTO Veterinario VALUES (11,"Víctor Melo");
-INSERT INTO Veterinario VALUES (12,"Pedro Lemos");
-INSERT INTO Veterinario VALUES (13,"Raul Batista");
-INSERT INTO Veterinario VALUES (14,"Célia Saraiva");
-INSERT INTO Veterinario VALUES (15,"Marcos Reis");
-INSERT INTO Veterinario VALUES (16,"Fabiano D'cruze");
-INSERT INTO Veterinario VALUES (17,"Sara Santos");
-
-Select * FROM Veterinario;
-
-INSERT INTO Vacina VALUES (1,"Vacina de temperamento canino"); -- dog like animals and bears
+INSERT INTO Vacina VALUES (1,"Vacina de Temperamento"); -- dog like animals and bears  -- 21,50,36
 INSERT INTO Vacina VALUES (2,"Vacina da Raiva"); -- all
-INSERT INTO Vacina VALUES (3,"Vacina da Panleukopenia"); -- cat like animals
-INSERT INTO Vacina VALUES (4,"Vacina da Parvovirus"); -- raccoon like animals
-INSERT INTO Vacina VALUES (5,"Vacina da Brucellosis"); -- ursos
-INSERT INTO Vacina VALUES (6,"Vacina da Diphtheria"); -- apes (primates)
+INSERT INTO Vacina VALUES (3,"Vacina da Panleukopenia"); -- cat like animals -- 1,2,5,16,17,40,48
+INSERT INTO Vacina VALUES (4,"Vacina da Parvovirus"); -- raccoon like animals -- 3,6,15
+INSERT INTO Vacina VALUES (5,"Vacina da Brucellosis"); -- ursos -- 21,50
+INSERT INTO Vacina VALUES (6,"Vacina da Diphtheria"); -- apes (primates) -- 3,4,7,40,44
 INSERT INTO Vacina VALUES (7,"Vacina do Tetano"); -- all
-INSERT INTO Vacina VALUES (8,"Vacina da Clostridial"); -- cow like and sheep (bovid and ovicaprin) girafes and okapis (giraffids)
-INSERT INTO Vacina VALUES (9,"Vacina da Febre Maligna Catarrhal"); -- deer (cervid)
-INSERT INTO Vacina VALUES (10,"Vacina de Clostridium perfringens"); -- camels like (camelids)
-INSERT INTO Vacina VALUES (11,"Vacina do Virus do Nilo Oeste"); -- horses like (equids)
-INSERT INTO Vacina VALUES (12,"Vacina da Leptospirosis "); -- rhinos tapirs pig like animals e animais marinhos
-INSERT INTO Vacina VALUES (13,"Vacina do polyomavirus"); -- birds
-INSERT INTO Vacina VALUES (14,"Vacina destinada a Micobacteriose"); -- marine mammals
-INSERT INTO Vacina VALUES (15,"Vacina destinada a Infeções Respiratórias"); -- all tirando peixes e mamiferos marinhos
+INSERT INTO Vacina VALUES (8,"Vacina da Clostridial"); -- cow like and sheep (bovid and ovicaprin) girafes and okapis (giraffids) -- 8,14,29,33,34,45
+INSERT INTO Vacina VALUES (9,"Vacina da Febre Maligna Catarrhal"); -- deer (cervid) -- 25,8
+INSERT INTO Vacina VALUES (10,"Vacina de Clostridium perfringens"); -- camels like (camelids) --34
+INSERT INTO Vacina VALUES (11,"Vacina do Virus do Nilo Oeste"); -- horses like (equids) -- 8,20,45
+INSERT INTO Vacina VALUES (12,"Vacina da Leptospirosis "); -- rhinos tapirs pig like animals e animais marinhos 10,11,12,43
+INSERT INTO Vacina VALUES (13,"Vacina do polyomavirus"); -- birds 24,26,27,31,41,42
+INSERT INTO Vacina VALUES (14,"Vacina destinada a Micobacteriose"); -- marine mammals 43
+INSERT INTO Vacina VALUES (15,"Vacina destinada a Infeções Respiratórias"); -- all tirando 43,10
 
-SELECT * FROM Vacina;
+INSERT INTO Especie VALUES (1,"Lince-ibérico","Lynx pardinus",24); -- Comprimento: 68-82 cm Altura: 40-50 cm PESO: 7-14 kg Floresta
+INSERT INTO Especie VALUES (2,"Leão-africano","Panthera leo bleyenberghi",58); -- Comprimento: 1,6-1,9 m Altura: 1,2 m Peso: 120-180 kg||| F :Comprimento: 1,7-2,5 m Altura: 1,2 m Peso: 150-240 kg Savana
+INSERT INTO Especie VALUES (3,"Macaco-capuchinho-de-peito-amarelo","Cebus xanthosternos",59); -- Comprimento: 36-42 cm Peso: 3 kg
+INSERT INTO Especie VALUES (4,"Macaco-do-japão","Macaca fuscata",21); -- Comprimento: ≤65 cm Peso: ≤18 kg
+INSERT INTO Especie VALUES (5,"Pantera-nebulosa","Neofelis nebulosa",37); -- Comprimento: 68-106 cm Peso: 
+INSERT INTO Especie VALUES (6,"Panda-vermelho","Ailurus fulgens",46); -- Comprimento: 51-73 cm Peso: 
+INSERT INTO Especie VALUES (7,"Orangotango-de-sumatra","Pongo abelii",41); -- Peso: 
+INSERT INTO Especie VALUES (8,"Okapi","Okapia johnstoni",30); -- Comprimento: ≤2 m Peso: 
+INSERT INTO Especie VALUES (9,"Pitão-real","Python regius",48); -- Comprimento: 1,2 – 1,8 m Peso: 
+INSERT INTO Especie VALUES (10,"Piranha-vermelha","Pygocentrus nattereri",31); -- Comprimento: 33 cm Peso: 
+INSERT INTO Especie VALUES (11,"Rinoceronte-branco","Ceratotherium simum",20); -- Comprimento: ≤4 m Peso: 
+INSERT INTO Especie VALUES (12,"Rinoceronte-indiano","Rhinoceros unicornis",60); -- Comprimento: ≤3,5 m Peso: 
+INSERT INTO Especie VALUES (13,"Tartaruga-aligátor-comum","Macrochelys temminckii",50); -- Comprimento: 35-80 cm Peso: 
+INSERT INTO Especie VALUES (14,"Girafa-de-angola","Giraffa camelopardalis angolensis",40); -- Comprimento: 14 cm Peso: 
+INSERT INTO Especie VALUES (15,"Suricata","Suricata suricatta",30); -- Peso: 
+INSERT INTO Especie VALUES (16,"Tigre-branco","Panthera tigris",35); -- F: Comprimento: 2,1-2,7 m Peso:  M:Comprimento: 2,6-3,1 m Peso: 
+INSERT INTO Especie VALUES (17,"Tigre-da-sibéria","Panthera tigris altaica",45); -- Comprimento: 2,4-3,3 m Peso: 
+INSERT INTO Especie VALUES (18,"Tartaruga-estrela-indiana","Geochelone elegans",55); -- Comprimento: 15-38 cm Peso: 
+INSERT INTO Especie VALUES (19,"Tartaruga-espinhosa","Heosemys spinosa",56); -- Comprimento: 17-22 cm Peso: 
+INSERT INTO Especie VALUES (20,"Zebra-de-grevy","Equus grevyi",22); -- Comprimento: ≤3 m Peso: 
+INSERT INTO Especie VALUES (21,"Urso-pardo","Ursus arctos",38); -- Comprimento: 1,5-2,8 m Peso: 
+INSERT INTO Especie VALUES (22,"Aligátor-americano","Alligator mississippiensis",42); -- F: Comprimento: 3 m Peso:  | M: Comprimento: 4,5 m Peso: 
+INSERT INTO Especie VALUES (23,"Anaconda-amarela","Eunectes notaeus",49); -- Comprimento: 3-4 m Peso: 
+INSERT INTO Especie VALUES (24,"Araçari-verde","Pteroglossus viridis",23); -- Comprimento: 30-39 cm Peso: 
+INSERT INTO Especie VALUES (25,"Adax","Addax nasomaculatus",58); -- Comprimento: <1,30 m Peso: 
+INSERT INTO Especie VALUES (26,"Arara-jacinta","Anodorhynchus hyacinthinus",47); -- Comprimento: 100 cm Peso: 
+INSERT INTO Especie VALUES (27,"Arara-escarlate","Ara macao",25); -- Comprimento: 84-89 cm Peso: 
+INSERT INTO Especie VALUES (28,"Axolote","Ambystoma mexicanum",34); -- Comprimento: <30cm Peso: 
+INSERT INTO Especie VALUES (29,"Bisonte-americano","Bison bison bison",22); -- Comprimento: <3,5 m Peso: 
+INSERT INTO Especie VALUES (30,"Boa-da-jamaica","Epicrates subflavus",51); -- Comprimento: 2 - 2,5 m
+INSERT INTO Especie VALUES (31,"Calau-da-papuásia","Aceros plicatus",59); -- Comprimento: 65-85 cm
+INSERT INTO Especie VALUES (32,"Boa-de-madagáscar","Sanzinia madagascariensis",36); -- Comprimento: até 2,5 m
+INSERT INTO Especie VALUES (33,"Búfalo-africano","Syncerus caffer caffer",26); -- Comprimento: 2,4-3,4 m
+INSERT INTO Especie VALUES (34,"Camelo","Camelus ferus",47); -- Comprimento: 250-300 cm
+INSERT INTO Especie VALUES (35,"Canguru-vermelho","Macropus rufus / Osphranter rufus",35); -- 
+INSERT INTO Especie VALUES (36,"Dragão-de-komodo","Varanus komodoensis",27); -- Comprimento: ≤3 m
+INSERT INTO Especie VALUES (37,"Elefante-africano","Loxodonta africana",42); -- Comprimento: 6-7,5 m
+INSERT INTO Especie VALUES (38,"Crocodilo-do-nilo","Crocodylus niloticus",38); -- Comprimento: 5,5 m
+INSERT INTO Especie VALUES (39,"Chimpanzé","Pan troglodytes",46); -- 
+INSERT INTO Especie VALUES (40,"Chita","Acinonyx jubatus",27); -- Comprimento: 1,1-1,3 m
+INSERT INTO Especie VALUES (41,"Ema","Dromaius novaehollandiae",52); -- 
+INSERT INTO Especie VALUES (42,"Flamingo-rubro","Phoenicopterus ruber",35); -- 
+INSERT INTO Especie VALUES (43,"Golfinho-roaz","Tursiops truncatus",42); -- Comprimento: ≤3,9 m
+INSERT INTO Especie VALUES (44,"Gorila-ocidental-das-terras-baixas","Gorilla gorilla gorilla",51); -- F: Comprimento: 1,5 m | M: Comprimento: 1,7 m 
+INSERT INTO Especie VALUES (45,"Hipopótamo","Hippopotamus amphibius",48); -- Comprimento: ≤5,5 m
+INSERT INTO Especie VALUES (46,"Iguana-rinoceronte","Cyclura cornuta",35); -- Comprimento: 1,2m
+INSERT INTO Especie VALUES (47,"Iguana-verde","Iguana iguana",58); -- Comprimento: 1,5-2 m
+INSERT INTO Especie VALUES (48,"Jaguar","Panthera onca onca",38); -- Comprimento: 1,15-1,70 cm
+INSERT INTO Especie VALUES (49,"Pinguim-do-Cabo","Spheniscus demersus",25); -- Comprimento: 55-76 cm
+INSERT INTO Especie VALUES (50,"Urso-polar","Ursus maritimus",43);
 
-INSERT INTO Especie VALUES (1,"Lince-ibérico","Lynx pardinus",32); -- Comprimento: 68-82 cm Altura: 40-50 cm PESO: 7-14 kg Floresta
-INSERT INTO Especie VALUES (2,"Leão-africano","Panthera leo bleyenberghi",32); -- Comprimento: 1,6-1,9 m Altura: 1,2 m Peso: 120-180 kg||| F :Comprimento: 1,7-2,5 m Altura: 1,2 m Peso: 150-240 kg Savana
-INSERT INTO Especie VALUES (3,"Macaco-capuchinho-de-peito-amarelo","Cebus xanthosternos",32); -- Comprimento: 36-42 cm Peso: 3 kg
-INSERT INTO Especie VALUES (4,"Macaco-do-japão","Macaca fuscata",32); -- Comprimento: ≤65 cm Peso: ≤18 kg
-INSERT INTO Especie VALUES (5,"Pantera-nebulosa","Neofelis nebulosa",32); -- Comprimento: 68-106 cm Peso: 
-INSERT INTO Especie VALUES (6,"Panda-vermelho","Ailurus fulgens",32); -- Comprimento: 51-73 cm Peso: 
-INSERT INTO Especie VALUES (7,"Orangotango-de-sumatra","Pongo abelii",32); -- Peso: 
-INSERT INTO Especie VALUES (8,"Okapi","Okapia johnstoni",32); -- Comprimento: ≤2 m Peso: 
-INSERT INTO Especie VALUES (9,"Pitão-real","Python regius",32); -- Comprimento: 1,2 – 1,8 m Peso: 
-INSERT INTO Especie VALUES (10,"Piranha-vermelha","Pygocentrus nattereri",32); -- Comprimento: 33 cm Peso: 
-INSERT INTO Especie VALUES (11,"Rinoceronte-branco","Ceratotherium simum",32); -- Comprimento: ≤4 m Peso: 
-INSERT INTO Especie VALUES (12,"Rinoceronte-indiano","Rhinoceros unicornis",32); -- Comprimento: ≤3,5 m Peso: 
-INSERT INTO Especie VALUES (13,"Tartaruga-aligátor-comum","Macrochelys temminckii",32); -- Comprimento: 35-80 cm Peso: 
-INSERT INTO Especie VALUES (14,"Tarântula-rosa","Grammostola rosea",32); -- Comprimento: 14 cm Peso: 
-INSERT INTO Especie VALUES (15,"Suricata","Suricata suricatta",32); -- Peso: 
-INSERT INTO Especie VALUES (16,"Tigre-branco","Panthera tigris",32); -- F: Comprimento: 2,1-2,7 m Peso:  M:Comprimento: 2,6-3,1 m Peso: 
-INSERT INTO Especie VALUES (17,"Tigre-da-sibéria","Panthera tigris altaica",32); -- Comprimento: 2,4-3,3 m Peso: 
-INSERT INTO Especie VALUES (18,"Tartaruga-estrela-indiana","Geochelone elegans",32); -- Comprimento: 15-38 cm Peso: 
-INSERT INTO Especie VALUES (19,"Tartaruga-espinhosa","Heosemys spinosa",32); -- Comprimento: 17-22 cm Peso: 
-INSERT INTO Especie VALUES (20,"Zebra-de-grevy","Equus grevyi",32); -- Comprimento: ≤3 m Peso: 
-INSERT INTO Especie VALUES (21,"Urso-pardo","Ursus arctos",32); -- Comprimento: 1,5-2,8 m Peso: 
-INSERT INTO Especie VALUES (22,"Aligátor-americano","Alligator mississippiensis",32); -- F: Comprimento: 3 m Peso:  | M: Comprimento: 4,5 m Peso: 
-INSERT INTO Especie VALUES (23,"Anaconda-amarela","Eunectes notaeus",32); -- Comprimento: 3-4 m Peso: 
-INSERT INTO Especie VALUES (24,"Araçari-verde","Pteroglossus viridis",32); -- Comprimento: 30-39 cm Peso: 
-INSERT INTO Especie VALUES (25,"Adax","Addax nasomaculatus",32); -- Comprimento: <1,30 m Peso: 
-INSERT INTO Especie VALUES (26,"Arara-jacinta","Anodorhynchus hyacinthinus",32); -- Comprimento: 100 cm Peso: 
-INSERT INTO Especie VALUES (27,"Arara-escarlate","Ara macao",32); -- Comprimento: 84-89 cm Peso: 
-INSERT INTO Especie VALUES (28,"Axolote","Ambystoma mexicanum",32); -- Comprimento: <30cm Peso: 
-INSERT INTO Especie VALUES (29,"Bisonte-americano","Bison bison bison",32); -- Comprimento: <3,5 m Peso: 
-INSERT INTO Especie VALUES (30,"Boa-da-jamaica","Epicrates subflavus",32); -- Comprimento: 2 - 2,5 m
-INSERT INTO Especie VALUES (31,"Calau-da-papuásia","Aceros plicatus",32); -- Comprimento: 65-85 cm
-INSERT INTO Especie VALUES (32,"Boa-de-madagáscar","Sanzinia madagascariensis",32); -- Comprimento: até 2,5 m
-INSERT INTO Especie VALUES (33,"Búfalo-africano","Syncerus caffer caffer",32); -- Comprimento: 2,4-3,4 m
-INSERT INTO Especie VALUES (34,"Camelo","Camelus ferus",32); -- Comprimento: 250-300 cm
-INSERT INTO Especie VALUES (35,"Canguru-vermelho","Macropus rufus / Osphranter rufus",32); -- 
-INSERT INTO Especie VALUES (36,"Dragão-de-komodo","Varanus komodoensis",32); -- Comprimento: ≤3 m
-INSERT INTO Especie VALUES (37,"Elefante-africano","Loxodonta africana",32); -- Comprimento: 6-7,5 m
-INSERT INTO Especie VALUES (38,"Crocodilo-do-nilo","Crocodylus niloticus",32); -- Comprimento: 5,5 m
-INSERT INTO Especie VALUES (39,"Chimpanzé","Pan troglodytes",32); -- 
-INSERT INTO Especie VALUES (40,"Chita","Acinonyx jubatus",32); -- Comprimento: 1,1-1,3 m
-INSERT INTO Especie VALUES (41,"Ema","Dromaius novaehollandiae",32); -- 
-INSERT INTO Especie VALUES (42,"Flamingo-rubro","Phoenicopterus ruber",32); -- 
-INSERT INTO Especie VALUES (43,"Golfinho-roaz","Tursiops truncatus",32); -- Comprimento: ≤3,9 m
-INSERT INTO Especie VALUES (44,"Gorila-ocidental-das-terras-baixas","Gorilla gorilla gorilla",32); -- F: Comprimento: 1,5 m | M: Comprimento: 1,7 m 
-INSERT INTO Especie VALUES (45,"Hipopótamo","Hippopotamus amphibius",32); -- Comprimento: ≤5,5 m
-INSERT INTO Especie VALUES (46,"Iguana-rinoceronte","Cyclura cornuta",32); -- Comprimento: 1,2m
-INSERT INTO Especie VALUES (47,"Iguana-verde","Iguana iguana",32); -- Comprimento: 1,5-2 m
-INSERT INTO Especie VALUES (48,"Jaguar","Panthera onca onca",32); -- Comprimento: 1,15-1,70 cm
-INSERT INTO Especie VALUES (49,"Íbis-escarlate","Eudocimus ruber",32); -- Comprimento: 55-76 cm
+INSERT INTO Especie_has_Vacina VALUES(21,1,'4-1-1','0-2-1',7,9);
+INSERT INTO Especie_has_Vacina VALUES(50,1,'0-6-1','3-1-1',18,1);
+INSERT INTO Especie_has_Vacina VALUES(36,1,'2-1-1','0-5-1',9,7);
+INSERT INTO Especie_has_Vacina VALUES(1,2,'5-1-1','0-2-1',21,7);
+INSERT INTO Especie_has_Vacina VALUES(2,2,'0-6-1','4-1-1',5,4);
+INSERT INTO Especie_has_Vacina VALUES(3,2,'0-9-1','5-1-1',20,7);
+INSERT INTO Especie_has_Vacina VALUES(4,2,'3-1-1','4-1-1',5,5);
+INSERT INTO Especie_has_Vacina VALUES(5,2,'0-5-1','0-2-1',24,14);
+INSERT INTO Especie_has_Vacina VALUES(6,2,'0-7-1','5-1-1',16,4);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(7,2,'0-1-1',1,7);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(8,2,'0-2-1',1,7);
+INSERT INTO Especie_has_Vacina VALUES(9,2,'0-9-1','4-1-1',2,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(10,2,'1-1-1',1,11);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(11,2,'0-8-1',1,5);
+INSERT INTO Especie_has_Vacina VALUES(12,2,'4-1-1','1-1-1',10,10);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(13,2,'0-2-1',1,1);
+INSERT INTO Especie_has_Vacina VALUES(14,2,'0-5-1','2-1-1',23,9);
+INSERT INTO Especie_has_Vacina VALUES(15,2,'0-1-1','0-4-1',12,12);
+INSERT INTO Especie_has_Vacina VALUES(16,2,'0-5-1','0-5-1',7,0);
+INSERT INTO Especie_has_Vacina VALUES(17,2,'3-1-1','1-1-1',3,12);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(18,2,'0-5-1',1,13);
+INSERT INTO Especie_has_Vacina VALUES(19,2,'0-5-1','4-1-1',3,9);
+INSERT INTO Especie_has_Vacina VALUES(20,2,'3-1-1','5-1-1',25,8);
+INSERT INTO Especie_has_Vacina VALUES(21,2,'0-4-1','0-1-1',18,8);
+INSERT INTO Especie_has_Vacina VALUES(22,2,'0-5-1','5-1-1',5,2);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(23,2,'1-1-1',1,0);
+INSERT INTO Especie_has_Vacina VALUES(24,2,'0-7-1','0-4-1',28,1);
+INSERT INTO Especie_has_Vacina VALUES(25,2,'0-5-1','0-3-1',14,5);
+INSERT INTO Especie_has_Vacina VALUES(26,2,'5-1-1','0-2-1',9,8);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(27,2,'0-2-1',1,4);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(28,2,'0-6-1',1,2);
+INSERT INTO Especie_has_Vacina VALUES(29,2,'4-1-1','5-1-1',11,0);
+INSERT INTO Especie_has_Vacina VALUES(30,2,'0-2-1','2-1-1',18,6);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(31,2,'3-1-1',1,9);
+INSERT INTO Especie_has_Vacina VALUES(32,2,'5-1-1','0-3-1',13,12);
+INSERT INTO Especie_has_Vacina VALUES(33,2,'0-8-1','0-1-1',10,6);
+INSERT INTO Especie_has_Vacina VALUES(34,2,'2-1-1','5-1-1',19,1);
+INSERT INTO Especie_has_Vacina VALUES(35,2,'4-1-1','0-2-1',7,12);
+INSERT INTO Especie_has_Vacina VALUES(36,2,'0-2-1','0-2-1',22,3);
+INSERT INTO Especie_has_Vacina VALUES(37,2,'0-6-1','4-1-1',20,14);
+INSERT INTO Especie_has_Vacina VALUES(38,2,'4-1-1','3-1-1',22,6);
+INSERT INTO Especie_has_Vacina VALUES(39,2,'2-1-1','5-1-1',8,14);
+INSERT INTO Especie_has_Vacina VALUES(40,2,'0-1-1','5-1-1',19,9);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(41,2,'0-4-1',1,0);
+INSERT INTO Especie_has_Vacina VALUES(42,2,'2-1-1','0-1-1',6,9);
+INSERT INTO Especie_has_Vacina VALUES(43,2,'2-1-1','3-1-1',28,9);
+INSERT INTO Especie_has_Vacina VALUES(44,2,'3-1-1','0-4-1',11,5);
+INSERT INTO Especie_has_Vacina VALUES(45,2,'5-1-1','4-1-1',29,13);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(46,2,'0-7-1',1,4);
+INSERT INTO Especie_has_Vacina VALUES(47,2,'0-5-1','5-1-1',18,12);
+INSERT INTO Especie_has_Vacina VALUES(48,2,'3-1-1','4-1-1',12,14);
+INSERT INTO Especie_has_Vacina VALUES(49,2,'1-1-1','0-4-1',4,9);
+INSERT INTO Especie_has_Vacina VALUES(50,2,'0-7-1','0-3-1',20,0);
+INSERT INTO Especie_has_Vacina VALUES(1,3,'0-9-1','3-1-1',12,4);
+INSERT INTO Especie_has_Vacina VALUES(2,3,'4-1-1','0-1-1',4,0);
+INSERT INTO Especie_has_Vacina VALUES(5,3,'4-1-1','0-5-1',3,8);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(16,3,'3-1-1',1,0);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(17,3,'0-7-1',1,4);
+INSERT INTO Especie_has_Vacina VALUES(40,3,'0-5-1','3-1-1',19,9);
+INSERT INTO Especie_has_Vacina VALUES(48,3,'3-1-1','2-1-1',7,1);
+INSERT INTO Especie_has_Vacina VALUES(3,4,'0-5-1','0-1-1',4,2);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(6,4,'0-5-1',1,0);
+INSERT INTO Especie_has_Vacina VALUES(15,4,'4-1-1','3-1-1',25,4);
+INSERT INTO Especie_has_Vacina VALUES(21,5,'0-3-1','0-3-1',23,6);
+INSERT INTO Especie_has_Vacina VALUES(50,5,'0-4-1','0-5-1',22,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(3,6,'0-6-1',1,1);
+INSERT INTO Especie_has_Vacina VALUES(4,6,'5-1-1','0-5-1',12,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(7,6,'0-2-1',1,11);
+INSERT INTO Especie_has_Vacina VALUES(40,6,'0-5-1','5-1-1',9,3);
+INSERT INTO Especie_has_Vacina VALUES(44,6,'1-1-1','0-5-1',20,5);
+INSERT INTO Especie_has_Vacina VALUES(1,7,'4-1-1','2-1-1',4,1);
+INSERT INTO Especie_has_Vacina VALUES(2,7,'2-1-1','3-1-1',22,11);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(3,7,'3-1-1',1,8);
+INSERT INTO Especie_has_Vacina VALUES(4,7,'2-1-1','2-1-1',27,10);
+INSERT INTO Especie_has_Vacina VALUES(5,7,'0-3-1','0-2-1',14,1);
+INSERT INTO Especie_has_Vacina VALUES(6,7,'1-1-1','0-5-1',13,8);
+INSERT INTO Especie_has_Vacina VALUES(7,7,'0-3-1','5-1-1',29,8);
+INSERT INTO Especie_has_Vacina VALUES(8,7,'4-1-1','0-3-1',24,9);
+INSERT INTO Especie_has_Vacina VALUES(9,7,'0-10-1','0-5-1',7,0);
+INSERT INTO Especie_has_Vacina VALUES(10,7,'0-5-1','0-4-1',4,10);
+INSERT INTO Especie_has_Vacina VALUES(11,7,'0-8-1','0-5-1',7,5);
+INSERT INTO Especie_has_Vacina VALUES(12,7,'0-5-1','0-1-1',24,14);
+INSERT INTO Especie_has_Vacina VALUES(13,7,'1-1-1','0-5-1',18,6);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(14,7,'0-3-1',1,2);
+INSERT INTO Especie_has_Vacina VALUES(15,7,'2-1-1','5-1-1',2,7);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(16,7,'5-1-1',1,3);
+INSERT INTO Especie_has_Vacina VALUES(17,7,'4-1-1','0-4-1',4,2);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(18,7,'5-1-1',1,14);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(19,7,'4-1-1',1,9);
+INSERT INTO Especie_has_Vacina VALUES(20,7,'4-1-1','5-1-1',19,7);
+INSERT INTO Especie_has_Vacina VALUES(21,7,'2-1-1','1-1-1',24,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(22,7,'0-5-1',1,11);
+INSERT INTO Especie_has_Vacina VALUES(23,7,'4-1-1','0-3-1',18,10);
+INSERT INTO Especie_has_Vacina VALUES(24,7,'4-1-1','0-2-1',22,12);
+INSERT INTO Especie_has_Vacina VALUES(25,7,'2-1-1','0-1-1',12,5);
+INSERT INTO Especie_has_Vacina VALUES(26,7,'3-1-1','0-1-1',22,10);
+INSERT INTO Especie_has_Vacina VALUES(27,7,'0-6-1','1-1-1',20,10);
+INSERT INTO Especie_has_Vacina VALUES(28,7,'4-1-1','4-1-1',10,7);
+INSERT INTO Especie_has_Vacina VALUES(29,7,'0-7-1','0-3-1',26,4);
+INSERT INTO Especie_has_Vacina VALUES(30,7,'5-1-1','2-1-1',5,11);
+INSERT INTO Especie_has_Vacina VALUES(31,7,'0-3-1','0-4-1',4,14);
+INSERT INTO Especie_has_Vacina VALUES(32,7,'0-10-1','0-5-1',12,7);
+INSERT INTO Especie_has_Vacina VALUES(33,7,'0-1-1','3-1-1',13,7);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(34,7,'3-1-1',1,12);
+INSERT INTO Especie_has_Vacina VALUES(35,7,'0-7-1','0-4-1',3,7);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(36,7,'1-1-1',1,6);
+INSERT INTO Especie_has_Vacina VALUES(37,7,'3-1-1','1-1-1',27,2);
+INSERT INTO Especie_has_Vacina VALUES(38,7,'0-3-1','0-1-1',17,4);
+INSERT INTO Especie_has_Vacina VALUES(39,7,'1-1-1','5-1-1',26,12);
+INSERT INTO Especie_has_Vacina VALUES(40,7,'0-10-1','0-3-1',29,0);
+INSERT INTO Especie_has_Vacina VALUES(41,7,'3-1-1','0-2-1',11,9);
+INSERT INTO Especie_has_Vacina VALUES(42,7,'1-1-1','1-1-1',26,3);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(43,7,'0-3-1',1,1);
+INSERT INTO Especie_has_Vacina VALUES(44,7,'4-1-1','3-1-1',17,1);
+INSERT INTO Especie_has_Vacina VALUES(45,7,'1-1-1','0-4-1',9,14);
+INSERT INTO Especie_has_Vacina VALUES(46,7,'0-9-1','0-5-1',12,12);
+INSERT INTO Especie_has_Vacina VALUES(47,7,'3-1-1','0-4-1',18,7);
+INSERT INTO Especie_has_Vacina VALUES(48,7,'0-4-1','0-2-1',12,4);
+INSERT INTO Especie_has_Vacina VALUES(49,7,'0-2-1','0-3-1',7,3);
+INSERT INTO Especie_has_Vacina VALUES(50,7,'5-1-1','1-1-1',20,11);
+INSERT INTO Especie_has_Vacina VALUES(8,8,'0-7-1','0-1-1',8,11);
+INSERT INTO Especie_has_Vacina VALUES(14,8,'0-4-1','4-1-1',4,5);
+INSERT INTO Especie_has_Vacina VALUES(29,8,'4-1-1','3-1-1',26,5);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(33,8,'0-9-1',1,1);
+INSERT INTO Especie_has_Vacina VALUES(34,8,'4-1-1','0-5-1',13,9);
+INSERT INTO Especie_has_Vacina VALUES(45,8,'0-3-1','4-1-1',26,12);
+INSERT INTO Especie_has_Vacina VALUES(25,9,'5-1-1','3-1-1',21,4);
+INSERT INTO Especie_has_Vacina VALUES(8,9,'3-1-1','4-1-1',27,2);
+INSERT INTO Especie_has_Vacina VALUES(34,10,'5-1-1','1-1-1',5,2);
+INSERT INTO Especie_has_Vacina VALUES(8,11,'0-3-1','0-5-1',20,3);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(20,11,'0-9-1',1,8);
+INSERT INTO Especie_has_Vacina VALUES(45,11,'4-1-1','0-4-1',25,1);
+INSERT INTO Especie_has_Vacina VALUES(10,12,'2-1-1','4-1-1',25,9);
+INSERT INTO Especie_has_Vacina VALUES(11,12,'0-7-1','2-1-1',8,14);
+INSERT INTO Especie_has_Vacina VALUES(12,12,'2-1-1','4-1-1',6,12);
+INSERT INTO Especie_has_Vacina VALUES(43,12,'4-1-1','2-1-1',29,12);
+INSERT INTO Especie_has_Vacina VALUES(24,13,'0-5-1','0-3-1',11,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(26,13,'1-1-1',1,3);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(27,13,'3-1-1',1,13);
+INSERT INTO Especie_has_Vacina VALUES(31,13,'0-8-1','4-1-1',13,14);
+INSERT INTO Especie_has_Vacina VALUES(41,13,'0-10-1','5-1-1',14,6);
+INSERT INTO Especie_has_Vacina VALUES(42,13,'0-3-1','3-1-1',21,3);
+INSERT INTO Especie_has_Vacina VALUES(43,14,'0-10-1','2-1-1',7,6);
+INSERT INTO Especie_has_Vacina VALUES(1,15,'0-4-1','3-1-1',6,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(2,15,'3-1-1',1,1);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(3,15,'0-6-1',1,6);
+INSERT INTO Especie_has_Vacina VALUES(4,15,'0-9-1','5-1-1',5,8);
+INSERT INTO Especie_has_Vacina VALUES(5,15,'4-1-1','0-4-1',26,11);
+INSERT INTO Especie_has_Vacina VALUES(6,15,'0-9-1','0-5-1',25,11);
+INSERT INTO Especie_has_Vacina VALUES(7,15,'0-10-1','0-4-1',23,8);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(8,15,'2-1-1',1,6);
+INSERT INTO Especie_has_Vacina VALUES(9,15,'2-1-1','0-1-1',16,14);
+INSERT INTO Especie_has_Vacina VALUES(11,15,'2-1-1','0-2-1',6,13);
+INSERT INTO Especie_has_Vacina VALUES(12,15,'5-1-1','4-1-1',10,4);
+INSERT INTO Especie_has_Vacina VALUES(13,15,'2-1-1','0-1-1',16,4);
+INSERT INTO Especie_has_Vacina VALUES(14,15,'0-2-1','1-1-1',29,13);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(15,15,'2-1-1',1,5);
+INSERT INTO Especie_has_Vacina VALUES(16,15,'3-1-1','0-1-1',25,14);
+INSERT INTO Especie_has_Vacina VALUES(17,15,'0-4-1','2-1-1',14,9);
+INSERT INTO Especie_has_Vacina VALUES(18,15,'1-1-1','2-1-1',10,7);
+INSERT INTO Especie_has_Vacina VALUES(19,15,'0-5-1','0-4-1',28,0);
+INSERT INTO Especie_has_Vacina VALUES(20,15,'4-1-1','3-1-1',9,8);
+INSERT INTO Especie_has_Vacina VALUES(21,15,'3-1-1','4-1-1',15,1);
+INSERT INTO Especie_has_Vacina VALUES(22,15,'3-1-1','1-1-1',24,12);
+INSERT INTO Especie_has_Vacina VALUES(23,15,'1-1-1','0-3-1',28,5);
+INSERT INTO Especie_has_Vacina VALUES(24,15,'5-1-1','0-2-1',16,6);
+INSERT INTO Especie_has_Vacina VALUES(25,15,'1-1-1','0-1-1',14,10);
+INSERT INTO Especie_has_Vacina VALUES(26,15,'1-1-1','0-1-1',28,10);
+INSERT INTO Especie_has_Vacina VALUES(27,15,'4-1-1','1-1-1',16,5);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(28,15,'2-1-1',1,3);
+INSERT INTO Especie_has_Vacina VALUES(29,15,'5-1-1','1-1-1',27,14);
+INSERT INTO Especie_has_Vacina VALUES(30,15,'2-1-1','0-2-1',28,3);
+INSERT INTO Especie_has_Vacina VALUES(31,15,'5-1-1','3-1-1',20,10);
+INSERT INTO Especie_has_Vacina VALUES(32,15,'5-1-1','0-1-1',22,1);
+INSERT INTO Especie_has_Vacina VALUES(33,15,'0-1-1','0-4-1',29,2);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(34,15,'3-1-1',1,10);
+INSERT INTO Especie_has_Vacina VALUES(35,15,'0-8-1','4-1-1',18,7);
+INSERT INTO Especie_has_Vacina VALUES(36,15,'1-1-1','0-2-1',3,8);
+INSERT INTO Especie_has_Vacina VALUES(37,15,'0-9-1','0-5-1',15,10);
+INSERT INTO Especie_has_Vacina VALUES(38,15,'0-10-1','0-1-1',2,3);
+INSERT INTO Especie_has_Vacina VALUES(39,15,'0-3-1','3-1-1',18,7);
+INSERT INTO Especie_has_Vacina VALUES(40,15,'4-1-1','5-1-1',16,8);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(41,15,'4-1-1',1,12);
+INSERT INTO Especie_has_Vacina (Especie_idEspecie,Vacina_idVacina,limite_temporal,doses_necessarias,dosagem) VALUES(42,15,'5-1-1',1,8);
+INSERT INTO Especie_has_Vacina VALUES(44,15,'0-1-1','0-5-1',22,10);
+INSERT INTO Especie_has_Vacina VALUES(45,15,'2-1-1','0-2-1',7,14);
+INSERT INTO Especie_has_Vacina VALUES(46,15,'0-6-1','0-5-1',13,1);
+INSERT INTO Especie_has_Vacina VALUES(47,15,'5-1-1','0-5-1',12,4);
+INSERT INTO Especie_has_Vacina VALUES(48,15,'4-1-1','0-5-1',19,3);
+INSERT INTO Especie_has_Vacina VALUES(49,15,'0-1-1','0-4-1',5,2);
+INSERT INTO Especie_has_Vacina VALUES(50,15,'5-1-1','0-1-1',8,4);
+
+INSERT INTO Tipo_has_Zona VALUES (1,1);
+INSERT INTO Tipo_has_Zona VALUES (1,5);
+INSERT INTO Tipo_has_Zona VALUES (2,5);
+INSERT INTO Tipo_has_Zona VALUES (3,5);
+INSERT INTO Tipo_has_Zona VALUES (4,5);
+INSERT INTO Tipo_has_Zona VALUES (5,5);
+INSERT INTO Tipo_has_Zona VALUES (6,5);
+INSERT INTO Tipo_has_Zona VALUES (7,5);
+INSERT INTO Tipo_has_Zona VALUES (8,5);
+INSERT INTO Tipo_has_Zona VALUES (9,5);
+INSERT INTO Tipo_has_Zona VALUES (7,4);
+INSERT INTO Tipo_has_Zona VALUES (9,4);
+INSERT INTO Tipo_has_Zona VALUES (4,3);
+INSERT INTO Tipo_has_Zona VALUES (2,2);
+INSERT INTO Tipo_has_Zona VALUES (3,2);
+INSERT INTO Tipo_has_Zona VALUES (4,2);
+INSERT INTO Tipo_has_Zona VALUES (5,2);
+INSERT INTO Tipo_has_Zona VALUES (6,2);
+INSERT INTO Tipo_has_Zona VALUES (7,2);
+INSERT INTO Tipo_has_Zona VALUES (8,2);
+
+INSERT INTO Bilhete VALUES (1,'2007-8-25',3);
+INSERT INTO Bilhete VALUES (2,'1993-8-7',1);
+INSERT INTO Bilhete VALUES (3,'1993-6-12',5);
+INSERT INTO Bilhete VALUES (4,'1992-2-17',5);
+INSERT INTO Bilhete VALUES (5,'2000-2-2',2);
+INSERT INTO Bilhete VALUES (6,'2008-2-21',2);
+INSERT INTO Bilhete VALUES (7,'2015-11-12',3);
+INSERT INTO Bilhete VALUES (8,'2005-8-1',5);
+INSERT INTO Bilhete VALUES (9,'1995-9-6',1);
+INSERT INTO Bilhete VALUES (10,'2010-3-22',1);
+INSERT INTO Bilhete VALUES (11,'2015-10-1',1);
+INSERT INTO Bilhete VALUES (12,'2002-5-28',3);
+INSERT INTO Bilhete VALUES (13,'1994-3-8',1);
+INSERT INTO Bilhete VALUES (14,'1991-11-26',4);
+INSERT INTO Bilhete VALUES (15,'2015-11-5',1);
+INSERT INTO Bilhete VALUES (16,'1998-7-24',4);
+INSERT INTO Bilhete VALUES (17,'2018-8-16',1);
+INSERT INTO Bilhete VALUES (18,'2000-12-4',2);
+INSERT INTO Bilhete VALUES (19,'2011-3-13',4);
+INSERT INTO Bilhete VALUES (20,'1992-4-11',2);
+INSERT INTO Bilhete VALUES (21,'1994-12-22',3);
+INSERT INTO Bilhete VALUES (22,'1990-1-10',2);
+INSERT INTO Bilhete VALUES (23,'2003-8-3',4);
+INSERT INTO Bilhete VALUES (24,'1999-3-20',5);
+INSERT INTO Bilhete VALUES (25,'2015-1-3',1);
+INSERT INTO Bilhete VALUES (26,'2003-7-22',5);
+INSERT INTO Bilhete VALUES (27,'1995-4-6',1);
+INSERT INTO Bilhete VALUES (28,'1995-7-28',1);
+INSERT INTO Bilhete VALUES (29,'2002-1-22',3);
+INSERT INTO Bilhete VALUES (30,'1999-2-26',5);
+INSERT INTO Bilhete VALUES (31,'2017-9-9',1);
+INSERT INTO Bilhete VALUES (32,'2009-8-25',5);
+INSERT INTO Bilhete VALUES (33,'1993-7-27',1);
+INSERT INTO Bilhete VALUES (34,'1996-12-17',1);
+INSERT INTO Bilhete VALUES (35,'1990-12-28',2);
+INSERT INTO Bilhete VALUES (36,'2008-4-13',3);
+INSERT INTO Bilhete VALUES (37,'2016-6-26',3);
+INSERT INTO Bilhete VALUES (38,'2008-8-29',5);
+INSERT INTO Bilhete VALUES (39,'2003-12-6',4);
+INSERT INTO Bilhete VALUES (40,'2009-11-30',3);
+INSERT INTO Bilhete VALUES (41,'1995-3-15',5);
+INSERT INTO Bilhete VALUES (42,'2001-8-27',4);
+INSERT INTO Bilhete VALUES (43,'1995-6-26',2);
+INSERT INTO Bilhete VALUES (44,'1998-5-11',4);
+INSERT INTO Bilhete VALUES (45,'2000-7-10',4);
+INSERT INTO Bilhete VALUES (46,'2006-11-19',3);
+INSERT INTO Bilhete VALUES (47,'2003-3-7',5);
+INSERT INTO Bilhete VALUES (48,'2007-3-24',1);
+INSERT INTO Bilhete VALUES (49,'1990-1-5',2);
+INSERT INTO Bilhete VALUES (50,'2013-6-18',3);
+INSERT INTO Bilhete VALUES (51,'2003-11-16',2);
+INSERT INTO Bilhete VALUES (52,'2015-9-20',4);
+INSERT INTO Bilhete VALUES (53,'2002-11-19',2);
+INSERT INTO Bilhete VALUES (54,'2013-9-19',2);
+INSERT INTO Bilhete VALUES (55,'2001-11-1',3);
+INSERT INTO Bilhete VALUES (56,'2009-8-4',5);
+INSERT INTO Bilhete VALUES (57,'1996-1-17',2);
+INSERT INTO Bilhete VALUES (58,'1999-2-17',4);
+INSERT INTO Bilhete VALUES (59,'1995-3-4',4);
+INSERT INTO Bilhete VALUES (60,'1992-9-4',4);
+INSERT INTO Bilhete VALUES (61,'1991-3-18',4);
+INSERT INTO Bilhete VALUES (62,'2004-4-28',4);
+INSERT INTO Bilhete VALUES (63,'2011-3-22',2);
+INSERT INTO Bilhete VALUES (64,'1999-3-14',4);
+INSERT INTO Bilhete VALUES (65,'2010-6-24',3);
+INSERT INTO Bilhete VALUES (66,'1997-12-15',1);
+INSERT INTO Bilhete VALUES (67,'1995-1-5',2);
+INSERT INTO Bilhete VALUES (68,'1992-7-19',3);
+INSERT INTO Bilhete VALUES (69,'2017-3-17',4);
+INSERT INTO Bilhete VALUES (70,'2001-11-23',3);
+INSERT INTO Bilhete VALUES (71,'1993-9-16',5);
+INSERT INTO Bilhete VALUES (72,'2001-11-13',2);
+INSERT INTO Bilhete VALUES (73,'2012-10-30',1);
+INSERT INTO Bilhete VALUES (74,'2002-1-23',1);
+INSERT INTO Bilhete VALUES (75,'2018-2-5',4);
+INSERT INTO Bilhete VALUES (76,'1990-5-25',4);
+INSERT INTO Bilhete VALUES (77,'1990-3-26',4);
+INSERT INTO Bilhete VALUES (78,'2014-3-8',2);
+INSERT INTO Bilhete VALUES (79,'2008-3-27',3);
+INSERT INTO Bilhete VALUES (80,'2009-8-18',1);
+INSERT INTO Bilhete VALUES (81,'1992-7-9',4);
+INSERT INTO Bilhete VALUES (82,'2014-12-18',2);
+INSERT INTO Bilhete VALUES (83,'1992-7-15',3);
+INSERT INTO Bilhete VALUES (84,'2007-3-8',5);
+INSERT INTO Bilhete VALUES (85,'1992-10-19',1);
+INSERT INTO Bilhete VALUES (86,'1992-10-29',1);
+INSERT INTO Bilhete VALUES (87,'2018-6-25',3);
+INSERT INTO Bilhete VALUES (88,'2014-2-17',1);
+INSERT INTO Bilhete VALUES (89,'2018-1-15',1);
+INSERT INTO Bilhete VALUES (90,'2019-10-10',2);
+INSERT INTO Bilhete VALUES (91,'2007-6-27',1);
+INSERT INTO Bilhete VALUES (92,'1992-11-30',4);
+INSERT INTO Bilhete VALUES (93,'1991-9-26',2);
+INSERT INTO Bilhete VALUES (94,'1993-6-28',4);
+INSERT INTO Bilhete VALUES (95,'1999-2-9',2);
+INSERT INTO Bilhete VALUES (96,'2015-2-17',4);
+INSERT INTO Bilhete VALUES (97,'2004-6-2',4);
+INSERT INTO Bilhete VALUES (98,'2009-9-12',3);
+INSERT INTO Bilhete VALUES (99,'2013-3-21',4);
+INSERT INTO Bilhete VALUES (100,'2019-3-8',1);
+
+INSERT INTO Contacto_Padrinho VALUES (1,"eduardofranco406@hotmail.com");
+INSERT INTO Contacto_Padrinho VALUES (1,"eduardofranco70@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (2,"2563779493");
+INSERT INTO Contacto_Padrinho VALUES (2,"2590137422");
+INSERT INTO Contacto_Padrinho VALUES (2,"2592724010");
+INSERT INTO Contacto_Padrinho VALUES (3,"morganacarvalho904@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (4,"968484305");
+INSERT INTO Contacto_Padrinho VALUES (4,"sirineulemos632@yahoo.com");
+INSERT INTO Contacto_Padrinho VALUES (4,"2531697654");
+INSERT INTO Contacto_Padrinho VALUES (5,"2535708383");
+INSERT INTO Contacto_Padrinho VALUES (6,"héliomoreira451@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (6,"2564648722");
+INSERT INTO Contacto_Padrinho VALUES (6,"913152175");
+INSERT INTO Contacto_Padrinho VALUES (7,"2591982503");
+INSERT INTO Contacto_Padrinho VALUES (7,"pablosaraiva963@yahoo.com");
+INSERT INTO Contacto_Padrinho VALUES (8,"933043048");
+INSERT INTO Contacto_Padrinho VALUES (8,"gustavomoraes961@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (9,"heitorlemos561@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (9,"heitorlemos350@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (9,"heitorlemos570@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (10,"921921576");
+INSERT INTO Contacto_Padrinho VALUES (10,"924429516");
+INSERT INTO Contacto_Padrinho VALUES (11,"926797266");
+INSERT INTO Contacto_Padrinho VALUES (11,"júliomoraes196@hotmail.com");
+INSERT INTO Contacto_Padrinho VALUES (12,"966047429");
+INSERT INTO Contacto_Padrinho VALUES (12,"963821972");
+INSERT INTO Contacto_Padrinho VALUES (13,"2533984240");
+INSERT INTO Contacto_Padrinho VALUES (13,"915979894");
+INSERT INTO Contacto_Padrinho VALUES (13,"915811467");
+INSERT INTO Contacto_Padrinho VALUES (14,"2599159760");
+INSERT INTO Contacto_Padrinho VALUES (14,"2537521187");
+INSERT INTO Contacto_Padrinho VALUES (15,"930841236");
+INSERT INTO Contacto_Padrinho VALUES (15,"washingtonsantos828@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (16,"águedalemos426@hotmail.com");
+INSERT INTO Contacto_Padrinho VALUES (17,"2591269125");
+INSERT INTO Contacto_Padrinho VALUES (18,"2569266802");
+INSERT INTO Contacto_Padrinho VALUES (18,"2565401809");
+INSERT INTO Contacto_Padrinho VALUES (19,"2599741105");
+INSERT INTO Contacto_Padrinho VALUES (19,"fábioestéves719@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (19,"2561194605");
+INSERT INTO Contacto_Padrinho VALUES (20,"karlasilva431@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (20,"2564300233");
+INSERT INTO Contacto_Padrinho VALUES (21,"917225318");
+INSERT INTO Contacto_Padrinho VALUES (22,"sílvianogueira496@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (22,"2534168889");
+INSERT INTO Contacto_Padrinho VALUES (22,"sílvianogueira406@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (23,"fabríciaestéves167@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (24,"911181263");
+INSERT INTO Contacto_Padrinho VALUES (24,"2567304403");
+INSERT INTO Contacto_Padrinho VALUES (24,"vitóriafranco331@gmail.com");
+INSERT INTO Contacto_Padrinho VALUES (25,"suélensaraiva969@outlook.com");
+INSERT INTO Contacto_Padrinho VALUES (25,"suélensaraiva258@gmail.com");
+
+INSERT INTO Veterinario VALUES (1,"Alessandra Araújo");
+INSERT INTO Veterinario VALUES (2,"Marcos Carvalho");
+INSERT INTO Veterinario VALUES (3,"Gúbio Santos");
+INSERT INTO Veterinario VALUES (4,"Ângela Moreira");
+INSERT INTO Veterinario VALUES (5,"Márcia Pereira");
+INSERT INTO Veterinario VALUES (6,"Félix Oliveira");
+INSERT INTO Veterinario VALUES (7,"César Saraiva");
+INSERT INTO Veterinario VALUES (8,"Júlia Carvalho");
+INSERT INTO Veterinario VALUES (9,"Águeda Franco");
+INSERT INTO Veterinario VALUES (10,"Yuri Albuquerque");
+INSERT INTO Veterinario VALUES (11,"Deneval Xavier");
+INSERT INTO Veterinario VALUES (12,"Ígor D'cruze");
+INSERT INTO Veterinario VALUES (13,"Feliciano Moraes");
+INSERT INTO Veterinario VALUES (14,"Esther Carvalho");
+INSERT INTO Veterinario VALUES (15,"Alessandro Araújo");
+INSERT INTO Veterinario VALUES (16,"César Albuquerque");
+INSERT INTO Veterinario VALUES (17,"Tertuliano Moraes");
+INSERT INTO Veterinario VALUES (18,"Roberta Nogueira");
+INSERT INTO Veterinario VALUES (19,"Guilherme Albuquerque");
+INSERT INTO Veterinario VALUES (20,"Eduarda Lemos");
+INSERT INTO Veterinario VALUES (21,"Lorena Franco");
+INSERT INTO Veterinario VALUES (22,"Deneval Pereira");
+INSERT INTO Veterinario VALUES (23,"Frederico Souza");
+INSERT INTO Veterinario VALUES (24,"Rafael Macedo");
+INSERT INTO Veterinario VALUES (25,"Tertuliano Saraiva");
+
+
+INSERT INTO Contacto_Veterinario VALUES (1,"alessandraaraújo603@yahoo.com");
+INSERT INTO Contacto_Veterinario VALUES (2,"2564883436");
+INSERT INTO Contacto_Veterinario VALUES (2,"934937856");
+INSERT INTO Contacto_Veterinario VALUES (3,"gúbiosantos184@yahoo.com");
+INSERT INTO Contacto_Veterinario VALUES (4,"939414000");
+INSERT INTO Contacto_Veterinario VALUES (4,"2563243311");
+INSERT INTO Contacto_Veterinario VALUES (4,"965243231");
+INSERT INTO Contacto_Veterinario VALUES (5,"2560582788");
+INSERT INTO Contacto_Veterinario VALUES (5,"927095664");
+INSERT INTO Contacto_Veterinario VALUES (5,"2598186237");
+INSERT INTO Contacto_Veterinario VALUES (6,"2535142377");
+INSERT INTO Contacto_Veterinario VALUES (6,"2563596917");
+INSERT INTO Contacto_Veterinario VALUES (6,"félixoliveira490@hotmail.com");
+INSERT INTO Contacto_Veterinario VALUES (7,"939727635");
+INSERT INTO Contacto_Veterinario VALUES (7,"2534697963");
+INSERT INTO Contacto_Veterinario VALUES (7,"césarsaraiva254@gmail.com");
+INSERT INTO Contacto_Veterinario VALUES (8,"927547996");
+INSERT INTO Contacto_Veterinario VALUES (8,"júliacarvalho137@gmail.com");
+INSERT INTO Contacto_Veterinario VALUES (9,"929259850");
+INSERT INTO Contacto_Veterinario VALUES (9,"águedafranco696@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (9,"2598852786");
+INSERT INTO Contacto_Veterinario VALUES (10,"919469126");
+INSERT INTO Contacto_Veterinario VALUES (10,"2561104255");
+INSERT INTO Contacto_Veterinario VALUES (10,"2565222882");
+INSERT INTO Contacto_Veterinario VALUES (11,"931637515");
+INSERT INTO Contacto_Veterinario VALUES (12,"965120040");
+INSERT INTO Contacto_Veterinario VALUES (13,"felicianomoraes492@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (14,"esthercarvalho655@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (14,"917081823");
+INSERT INTO Contacto_Veterinario VALUES (15,"2596981987");
+INSERT INTO Contacto_Veterinario VALUES (15,"alessandroaraújo956@hotmail.com");
+INSERT INTO Contacto_Veterinario VALUES (16,"césaralbuquerque322@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (16,"2593211414");
+INSERT INTO Contacto_Veterinario VALUES (17,"2593407908");
+INSERT INTO Contacto_Veterinario VALUES (17,"2567055944");
+INSERT INTO Contacto_Veterinario VALUES (17,"966170889");
+INSERT INTO Contacto_Veterinario VALUES (18,"927185606");
+INSERT INTO Contacto_Veterinario VALUES (18,"robertanogueira752@yahoo.com");
+INSERT INTO Contacto_Veterinario VALUES (19,"guilhermealbuquerque610@gmail.com");
+INSERT INTO Contacto_Veterinario VALUES (19,"965273103");
+INSERT INTO Contacto_Veterinario VALUES (19,"915800359");
+INSERT INTO Contacto_Veterinario VALUES (20,"eduardalemos858@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (20,"eduardalemos944@outlook.com");
+INSERT INTO Contacto_Veterinario VALUES (20,"911124267");
+INSERT INTO Contacto_Veterinario VALUES (21,"926009073");
+INSERT INTO Contacto_Veterinario VALUES (22,"966887759");
+INSERT INTO Contacto_Veterinario VALUES (23,"933682346");
+INSERT INTO Contacto_Veterinario VALUES (24,"938202593");
+INSERT INTO Contacto_Veterinario VALUES (25,"2594549153");
+INSERT INTO Contacto_Veterinario VALUES (25,"tertulianosaraiva568@outlook.com");
+
+INSERT INTO Recinto VALUES (1,0,0,2.4,"Oceano",0,9); -- 43
+INSERT INTO Recinto VALUES (2,10,0,2.7,"Oceano",0,9); -- 10
+INSERT INTO Recinto VALUES (3,20,0,1.1,"Pólo",0,7); -- 49
+INSERT INTO Recinto VALUES (4,30,0,2.0,"Pólo",0,7); -- 50
+INSERT INTO Recinto VALUES (5,40,0,1.7,"Floresta Tropical",0,2); -- 44
+INSERT INTO Recinto VALUES (6,0,10,3.8,"Floresta Tropical",0,2); -- 39
+INSERT INTO Recinto VALUES (7,10,10,2.2,"Floresta Tropical",0,2); -- 3
+INSERT INTO Recinto VALUES (8,20,10,3.3,"Floresta Tropical",0,8); -- 4
+INSERT INTO Recinto VALUES (9,30,10,2.9,"Floresta Tropical",0,8); -- 7
+INSERT INTO Recinto VALUES (10,40,10,3.6,"Floresta Tropical",0,4); -- 47
+INSERT INTO Recinto VALUES (11,0,20,2.2,"Floresta Tropical",0,4); -- 46
+INSERT INTO Recinto VALUES (12,10,20,1.0,"Floresta Tropical",0,4); -- 32
+INSERT INTO Recinto VALUES (13,20,20,3.9,"Floresta Tropical",0,4); -- 30
+INSERT INTO Recinto VALUES (14,30,20,1.9,"Floresta Tropical",0,4); -- 19
+INSERT INTO Recinto VALUES (15,40,20,3.7,"Floresta Tropical",0,1); -- 24
+INSERT INTO Recinto VALUES (16,0,30,1.8,"Floresta Tropical",0,1); -- 26
+INSERT INTO Recinto VALUES (17,10,30,2.6,"Floresta Tropical",0,1); -- 27
+INSERT INTO Recinto VALUES (18,20,30,0.3,"Floresta Tropical",0,8); -- 31
+INSERT INTO Recinto VALUES (19,30,30,3.7,"Pântano",0,5); -- 28
+INSERT INTO Recinto VALUES (20,40,30,1.1,"Pântano",0,4); -- 23
+INSERT INTO Recinto VALUES (21,0,40,2.7,"Pântano",0,5); -- 22
+INSERT INTO Recinto VALUES (22,10,40,0.2,"Pântano",0,4); -- 13
+INSERT INTO Recinto VALUES (23,20,40,3.5,"Pântano",0,4); -- 9
+INSERT INTO Recinto VALUES (24,30,40,3.8,"Floresta",0,6); -- 6
+INSERT INTO Recinto VALUES (25,40,40,0.0,"Floresta",0,6); -- 35
+INSERT INTO Recinto VALUES (26,0,50,3.5,"Floresta",0,3); -- 1
+INSERT INTO Recinto VALUES (27,10,50,3.6,"Rio",0,5); -- 45
+INSERT INTO Recinto VALUES (28,20,50,2.5,"Rio",0,1); -- 42
+INSERT INTO Recinto VALUES (29,30,50,0.4,"Rio",0,5); -- 38
+INSERT INTO Recinto VALUES (30,40,50,2.7,"Savana",0,5); -- 2
+INSERT INTO Recinto VALUES (31,0,60,1.6,"Savana",0,5); -- 41
+INSERT INTO Recinto VALUES (32,10,60,1.7,"Savana",0,3); -- 40
+INSERT INTO Recinto VALUES (33,20,60,3.5,"Savana",0,5); -- 37
+INSERT INTO Recinto VALUES (34,30,60,2.7,"Savana",0,5); -- 33
+INSERT INTO Recinto VALUES (35,40,60,2.9,"Savana",0,5); -- 20
+INSERT INTO Recinto VALUES (36,0,70,3.5,"Savana",0,8); -- 18
+INSERT INTO Recinto VALUES (37,10,70,3.0,"Savana",0,5); -- 15
+INSERT INTO Recinto VALUES (38,20,70,3.9,"Savana",0,5); -- 14
+INSERT INTO Recinto VALUES (39,30,70,3.9,"Savana",0,8); -- 12
+INSERT INTO Recinto VALUES (40,40,70,1.3,"Savana",0,5); -- 11
+INSERT INTO Recinto VALUES (41,0,80,2.7,"Montanha",0,3); -- 48
+INSERT INTO Recinto VALUES (42,10,80,1.5,"Montanha",0,5); -- 25
+INSERT INTO Recinto VALUES (43,20,80,2.3,"Montanha",0,5); -- 21
+INSERT INTO Recinto VALUES (44,30,80,3.9,"Montanha",0,3); -- 17
+INSERT INTO Recinto VALUES (45,40,80,0.8,"Montanha",0,3); -- 5
+INSERT INTO Recinto VALUES (46,0,90,1.9,"Planície Temperada",0,5); -- 29
+INSERT INTO Recinto VALUES (47,10,90,2.1,"Planície Temperada",0,3); -- 16
+INSERT INTO Recinto VALUES (48,20,90,1.5,"Planície Temperada",0,5); -- 8
+INSERT INTO Recinto VALUES (49,30,90,0.2,"Deserto",0,5); -- 36
+INSERT INTO Recinto VALUES (50,40,90,0.1,"Deserto",0,5); -- 34
+
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (1,"Masculino",'1976-10-5',0.60,3.63,538.712,1,1,43);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (2,"Masculino",'2001-5-30',0.58,4.15,564.632,0,1,43);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (3,"Masculino",'2007-10-3',0.10,0.32,4.014,1,2,10);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (4,"Masculino",'2016-9-27',0.09,0.32,4.163,1,2,10);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (5,"Masculino",'1990-8-30',0.10,0.35,4.287,1,2,10);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (6,"Feminino",'2010-10-16',0.10,0.30,3.614,0,2,10);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (7,"Feminino",'1970-7-3',0.09,0.33,3.941,1,2,10);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (8,"Masculino",'2010-6-23',0.73,0.28,2.910,1,3,49);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (9,"Feminino",'2008-8-15',1.31,2.74,387.922,0,4,50);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (10,"Masculino",'1971-4-7',1.34,2.95,366.410,1,4,50);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (11,"Feminino",'2010-10-27',1.36,2.94,368.563,1,4,50);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (12,"Masculino",'1996-4-4',1.32,2.87,443.325,1,4,50);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (13,"Masculino",'2000-2-7',2.08,1.75,200.848,1,5,44);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (14,"Masculino",'2018-9-1',2.04,1.54,215.936,0,5,44);
+INSERT INTO Animal VALUES (15,"Feminino","Shredder",'2004-12-19',2.07,1.69,148.629,0,1,5,44);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (16,"Masculino",'1983-8-19',0.93,0.41,69.565,1,6,39);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (17,"Masculino",'1985-8-2',0.91,0.43,50.582,1,6,39);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (18,"Masculino",'1975-1-30',0.98,0.43,2.671,1,7,3);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (19,"Masculino",'2017-3-25',1.04,0.44,2.754,1,7,3);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (20,"Masculino",'2004-4-22',0.95,0.45,2.608,1,7,3);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (21,"Masculino",'2016-2-2',1.04,0.60,0.158,1,8,4);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (22,"Feminino",'2005-4-19',1.03,0.41,95.420,1,9,7);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (23,"Feminino",'2013-8-6',0.97,0.37,75.296,1,9,7);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (24,"Feminino",'2010-6-21',0.19,2.01,4.813,1,10,47);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (25,"Masculino",'1994-10-9',0.19,2.19,5.590,1,10,47);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (26,"Feminino",'1993-2-18',0.19,0.21,7.321,1,11,46);
+INSERT INTO Animal VALUES (27,"Masculino","Dove",'1975-6-30',0.20,2.67,5.370,1,2,12,32);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (28,"Feminino",'1992-9-26',0.19,2.48,4.534,1,12,32);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (29,"Feminino",'1998-9-30',0.19,2.74,5.065,1,12,32);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (30,"Feminino",'2001-8-17',0.19,2.39,5.414,1,12,32);
+INSERT INTO Animal VALUES (31,"Masculino","Sally",'1992-12-15',0.20,2.53,32.186,1,3,13,30);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (32,"Feminino",'2001-8-21',0.20,2.45,27.067,1,13,30);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (33,"Masculino",'1979-10-9',0.20,2.73,30.343,0,13,30);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (34,"Masculino",'2003-8-9',0.29,0.22,2.106,1,14,19);
+INSERT INTO Animal VALUES (35,"Feminino","Sugar",'2019-12-10',0.29,0.22,1.480,1,4,14,19);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (36,"Masculino",'2013-9-5',0.29,0.20,2.287,0,14,19);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (37,"Feminino",'2001-7-12',0.29,0.21,1.978,1,14,19);
+INSERT INTO Animal VALUES (38,"Feminino","Spectral",'2000-12-7',0.25,0.38,0.165,1,5,15,24);
+INSERT INTO Animal VALUES (39,"Masculino","Bonkers",'2005-6-20',0.25,0.37,0.133,1,6,15,24);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (40,"Feminino",'1970-12-10',0.24,0.37,0.157,1,15,24);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (41,"Masculino",'1998-6-5',0.24,0.99,1.728,1,16,26);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (42,"Masculino",'1989-8-2',0.24,0.83,1.566,0,17,27);
+INSERT INTO Animal VALUES (43,"Masculino","Teapot",'1976-6-7',0.24,0.85,1.954,0,7,18,31);
+INSERT INTO Animal VALUES (44,"Masculino","Sonya",'1994-6-12',0.24,0.85,2.037,1,8,18,31);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (45,"Feminino",'2012-10-11',0.19,0.31,0.143,0,19,28);
+INSERT INTO Animal VALUES (46,"Feminino","Hugo",'2007-11-13',0.20,0.28,0.191,1,9,19,28);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (47,"Masculino",'1970-6-4',0.14,3.71,24.934,1,20,23);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (48,"Feminino",'2013-2-8',0.14,4.22,24.759,0,20,23);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (49,"Masculino",'1993-3-18',0.15,3.73,26.036,1,20,23);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (50,"Masculino",'2005-10-3',0.14,4.15,29.233,1,20,23);
+INSERT INTO Animal VALUES (51,"Masculino","Chakra",'2011-3-27',0.29,4.70,479.915,0,10,21,22);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (52,"Masculino",'1990-6-12',0.31,4.68,523.624,1,21,22);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (53,"Masculino",'1989-7-21',0.29,4.46,406.131,1,21,22);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (54,"Masculino",'2019-8-26',0.30,4.89,361.479,1,21,22);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (55,"Masculino",'1976-12-13',0.28,4.38,443.275,1,21,22);
+INSERT INTO Animal VALUES (56,"Feminino","Sonya",'1993-4-8',0.19,0.82,121.896,1,11,22,13);
+INSERT INTO Animal VALUES (57,"Masculino","Galileo",'2012-4-23',0.20,2.12,15.939,1,12,23,9);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (58,"Masculino",'2011-11-21',0.20,1.99,13.665,1,23,9);
+INSERT INTO Animal VALUES (59,"Masculino","Chakra",'2010-3-11',0.70,0.78,5.178,1,13,24,6);
+INSERT INTO Animal VALUES (60,"Feminino","Sonya",'1993-5-29',0.74,0.72,6.247,1,14,24,6);
+INSERT INTO Animal VALUES (61,"Masculino","Bonkers",'2019-5-6',0.76,0.70,5.310,0,15,24,6);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (62,"Masculino",'2008-7-29',1.49,2.07,95.359,1,25,35);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (63,"Feminino",'2019-1-19',1.49,2.00,97.474,1,25,35);
+INSERT INTO Animal VALUES (64,"Masculino","Fang",'1991-9-30',1.42,1.98,105.097,1,16,25,35);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (65,"Masculino",'1985-3-24',1.46,1.99,81.693,1,25,35);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (66,"Masculino",'1982-3-19',1.53,1.93,84.385,1,25,35);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (67,"Feminino",'2010-6-20',0.48,0.73,11.038,0,26,1);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (68,"Masculino",'2009-7-14',0.52,0.84,12.158,1,26,1);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (69,"Masculino",'1973-12-21',0.52,0.78,16.428,0,26,1);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (70,"Masculino",'1991-7-11',0.50,0.86,13.920,1,26,1);
+INSERT INTO Animal VALUES (71,"Feminino","Fuzz",'2017-11-12',1.53,5.11,4517.098,1,17,27,45);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (72,"Masculino",'2012-1-26',1.54,5.94,4135.280,1,27,45);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (73,"Masculino",'1996-7-1',1.56,5.68,3878.032,0,27,45);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (74,"Masculino",'1986-6-22',1.53,5.61,4148.481,1,27,45);
+INSERT INTO Animal VALUES (75,"Feminino","Galileo",'2007-11-23',1.45,0.27,2.918,0,18,28,42);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (76,"Masculino",'2015-12-9',0.29,5.48,1060.892,0,29,38);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (77,"Feminino",'2004-6-24',0.30,5.29,936.564,1,29,38);
+INSERT INTO Animal VALUES (78,"Masculino","Crook",'2005-10-7',1.18,2.64,231.319,1,19,30,2);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (79,"Masculino",'1998-2-1',1.18,2.64,277.423,1,30,2);
+INSERT INTO Animal VALUES (80,"Feminino","Fuzz",'1981-10-26',1.82,0.99,41.557,1,20,31,41);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (81,"Feminino",'2011-8-23',1.90,0.94,50.008,1,31,41);
+INSERT INTO Animal VALUES (82,"Masculino","Zion",'2005-8-17',1.97,1.01,51.889,1,21,31,41);
+INSERT INTO Animal VALUES (83,"Feminino","Zion",'2010-2-20',0.93,1.40,37.777,0,22,32,40);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (84,"Feminino",'1990-12-24',0.90,1.20,42.803,1,32,40);
+INSERT INTO Animal VALUES (85,"Masculino","Dove",'2014-11-28',3.63,7.74,6639.074,1,23,33,37);
+INSERT INTO Animal VALUES (86,"Feminino","Fang",'1994-7-1',3.55,7.91,5962.912,0,24,33,37);
+INSERT INTO Animal VALUES (87,"Masculino","Teapot",'1979-1-20',3.76,6.76,7164.992,1,25,33,37);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (88,"Masculino",'2014-9-8',3.68,6.89,8265.094,1,33,37);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (89,"Feminino",'1999-9-24',1.71,3.14,867.075,1,34,33);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (90,"Masculino",'1981-3-3',1.76,3.37,1064.438,1,34,33);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (91,"Masculino",'2012-3-19',1.78,3.14,843.598,1,34,33);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (92,"Masculino",'1999-4-30',1.64,3.26,457.520,1,35,20);
+INSERT INTO Animal VALUES (93,"Masculino","Crook",'1978-4-13',1.59,2.88,460.756,0,1,35,20);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (94,"Feminino",'1974-12-22',1.60,3.07,434.555,1,35,20);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (95,"Masculino",'1983-7-16',1.63,3.18,381.627,1,35,20);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (96,"Feminino",'2002-7-9',1.53,2.96,393.720,1,35,20);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (97,"Masculino",'1993-5-24',0.20,0.35,5.233,1,36,18);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (98,"Feminino",'1989-5-21',0.34,0.10,0.701,1,37,15);
+INSERT INTO Animal VALUES (99,"Feminino","Teapot",'1971-5-6',0.36,0.09,0.951,0,2,37,15);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (100,"Masculino",'2005-12-14',0.35,0.09,0.785,1,37,15);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (101,"Masculino",'1984-9-6',5.05,4.71,1716.653,1,38,14);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (102,"Masculino",'2016-7-19',5.15,4.63,1790.506,1,38,14);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (103,"Feminino",'2000-12-11',5.19,4.49,1711.666,1,38,14);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (104,"Feminino",'1979-3-9',1.85,3.23,1984.100,0,39,12);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (105,"Feminino",'2012-12-16',2.07,3.63,3690.000,1,40,11);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (106,"Masculino",'2019-10-25',2.05,3.86,3805.901,1,40,11);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (107,"Feminino",'2004-7-27',0.96,1.77,87.766,1,41,48);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (108,"Feminino",'1972-6-9',0.96,1.66,124.685,1,41,48);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (109,"Masculino",'1971-12-4',1.14,1.21,97.915,1,42,25);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (110,"Masculino",'1980-9-16',1.18,1.35,75.477,1,42,25);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (111,"Feminino",'2009-3-20',1.19,1.41,65.813,1,42,25);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (112,"Feminino",'1992-1-25',1.50,2.84,618.434,1,43,21);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (113,"Feminino",'1984-6-28',1.55,2.57,610.569,1,43,21);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (114,"Feminino",'2002-2-19',1.56,3.07,527.350,1,43,21);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (115,"Masculino",'2002-6-19',1.45,2.66,496.043,1,43,21);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (116,"Masculino",'1972-1-11',1.12,3.38,330.247,1,44,17);
+INSERT INTO Animal VALUES (117,"Masculino","Hunter",'1998-8-7',1.04,3.43,306.803,1,3,44,17);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (118,"Feminino",'1999-8-28',1.04,3.56,281.535,0,44,17);
+INSERT INTO Animal VALUES (119,"Feminino","Galileo",'2001-3-5',0.65,1.10,21.191,1,4,45,5);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (120,"Feminino",'2011-3-3',0.63,1.13,21.847,0,45,5);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (121,"Feminino",'2016-7-23',0.66,0.96,20.338,1,45,5);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (122,"Feminino",'2005-9-17',2.04,3.42,765.892,1,46,29);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (123,"Masculino",'2010-9-14',1.93,3.25,1142.922,1,46,29);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (124,"Masculino",'1991-4-26',1.87,3.83,1068.670,0,46,29);
+INSERT INTO Animal VALUES (125,"Masculino","Shredder",'2019-3-18',1.87,3.69,1026.279,1,5,46,29);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (126,"Feminino",'2001-3-7',2.02,3.26,1012.012,1,46,29);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (127,"Masculino",'1988-4-1',1.12,3.39,270.158,1,47,16);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (128,"Feminino",'1984-2-15',1.04,3.23,197.363,0,47,16);
+INSERT INTO Animal VALUES (129,"Masculino","Bonkers",'1977-4-26',1.13,3.17,274.355,1,6,47,16);
+INSERT INTO Animal VALUES (130,"Feminino","Hunter",'1983-8-16',2.07,1.79,240.677,1,7,48,8);
+INSERT INTO Animal VALUES (131,"Masculino","Fuzz",'2011-7-9',1.97,1.83,282.687,1,8,48,8);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (132,"Feminino",'2014-10-19',1.99,1.96,304.390,1,48,8);
+INSERT INTO Animal VALUES (133,"Feminino","Crook",'2004-10-2',0.40,3.19,140.406,1,9,49,36);
+INSERT INTO Animal VALUES (134,"Masculino","Galileo",'2009-8-20',0.41,3.26,175.145,1,10,49,36);
+INSERT INTO Animal VALUES (135,"Masculino","Galileo",'1979-6-16',0.40,3.23,120.566,1,11,49,36);
+INSERT INTO Animal VALUES (136,"Masculino","Galileo",'1977-12-29',1.71,2.89,691.568,1,12,50,34);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (137,"Feminino",'1986-8-22',1.83,3.10,627.988,0,50,34);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (138,"Masculino",'2010-4-28',1.76,2.76,481.882,1,50,34);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (139,"Masculino",'2008-10-21',1.75,2.91,702.717,0,50,34);
+INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (140,"Feminino",'1976-4-20',1.85,3.14,484.423,1,50,34);
+
+INSERT INTO Animal_has_Animal VALUES (67,69);
+INSERT INTO Animal_has_Animal VALUES (67,70);
+INSERT INTO Animal_has_Animal VALUES (68,69);
+INSERT INTO Animal_has_Animal VALUES (68,70);
+INSERT INTO Animal_has_Animal VALUES (78,79);
+INSERT INTO Animal_has_Animal VALUES (19,18);
+INSERT INTO Animal_has_Animal VALUES (19,20);
+INSERT INTO Animal_has_Animal VALUES (120,119);
+INSERT INTO Animal_has_Animal VALUES (121,120);
+INSERT INTO Animal_has_Animal VALUES (59,60);
+INSERT INTO Animal_has_Animal VALUES (61,59);
+INSERT INTO Animal_has_Animal VALUES (23,22);
+INSERT INTO Animal_has_Animal VALUES (131,130);
+INSERT INTO Animal_has_Animal VALUES (132,130);
+INSERT INTO Animal_has_Animal VALUES (132,131);
+INSERT INTO Animal_has_Animal VALUES (3,5);
+INSERT INTO Animal_has_Animal VALUES (3,7);
+INSERT INTO Animal_has_Animal VALUES (4,3);
+INSERT INTO Animal_has_Animal VALUES (4,6);
+INSERT INTO Animal_has_Animal VALUES (6,3);
+INSERT INTO Animal_has_Animal VALUES (6,5);
+INSERT INTO Animal_has_Animal VALUES (6,7);
+INSERT INTO Animal_has_Animal VALUES (106,105);
+INSERT INTO Animal_has_Animal VALUES (102,101);
+INSERT INTO Animal_has_Animal VALUES (102,103);
+INSERT INTO Animal_has_Animal VALUES (103,101);
+INSERT INTO Animal_has_Animal VALUES (98,99);
+INSERT INTO Animal_has_Animal VALUES (100,98);
+INSERT INTO Animal_has_Animal VALUES (100,99);
+INSERT INTO Animal_has_Animal VALUES (127,128);
+INSERT INTO Animal_has_Animal VALUES (127,129);
+INSERT INTO Animal_has_Animal VALUES (128,129);
+INSERT INTO Animal_has_Animal VALUES (117,116);
+INSERT INTO Animal_has_Animal VALUES (118,116);
+INSERT INTO Animal_has_Animal VALUES (35,34);
+INSERT INTO Animal_has_Animal VALUES (35,36);
+INSERT INTO Animal_has_Animal VALUES (35,37);
+INSERT INTO Animal_has_Animal VALUES (36,34);
+INSERT INTO Animal_has_Animal VALUES (36,37);
+INSERT INTO Animal_has_Animal VALUES (92,93);
+INSERT INTO Animal_has_Animal VALUES (92,94);
+INSERT INTO Animal_has_Animal VALUES (92,95);
+INSERT INTO Animal_has_Animal VALUES (96,92);
+INSERT INTO Animal_has_Animal VALUES (96,93);
+INSERT INTO Animal_has_Animal VALUES (96,94);
+INSERT INTO Animal_has_Animal VALUES (96,95);
+INSERT INTO Animal_has_Animal VALUES (112,113);
+INSERT INTO Animal_has_Animal VALUES (114,112);
+INSERT INTO Animal_has_Animal VALUES (115,112);
+INSERT INTO Animal_has_Animal VALUES (115,113);
+INSERT INTO Animal_has_Animal VALUES (51,52);
+INSERT INTO Animal_has_Animal VALUES (51,53);
+INSERT INTO Animal_has_Animal VALUES (51,55);
+INSERT INTO Animal_has_Animal VALUES (54,51);
+INSERT INTO Animal_has_Animal VALUES (48,47);
+INSERT INTO Animal_has_Animal VALUES (48,49);
+INSERT INTO Animal_has_Animal VALUES (48,50);
+INSERT INTO Animal_has_Animal VALUES (49,47);
+INSERT INTO Animal_has_Animal VALUES (50,49);
+INSERT INTO Animal_has_Animal VALUES (38,40);
+INSERT INTO Animal_has_Animal VALUES (39,38);
+INSERT INTO Animal_has_Animal VALUES (39,40);
+INSERT INTO Animal_has_Animal VALUES (110,109);
+INSERT INTO Animal_has_Animal VALUES (111,109);
+INSERT INTO Animal_has_Animal VALUES (111,110);
+INSERT INTO Animal_has_Animal VALUES (45,46);
+INSERT INTO Animal_has_Animal VALUES (122,124);
+INSERT INTO Animal_has_Animal VALUES (122,126);
+INSERT INTO Animal_has_Animal VALUES (123,122);
+INSERT INTO Animal_has_Animal VALUES (123,124);
+INSERT INTO Animal_has_Animal VALUES (123,126);
+INSERT INTO Animal_has_Animal VALUES (125,123);
+INSERT INTO Animal_has_Animal VALUES (31,33);
+INSERT INTO Animal_has_Animal VALUES (32,31);
+INSERT INTO Animal_has_Animal VALUES (32,33);
+INSERT INTO Animal_has_Animal VALUES (44,43);
+INSERT INTO Animal_has_Animal VALUES (28,27);
+INSERT INTO Animal_has_Animal VALUES (29,28);
+INSERT INTO Animal_has_Animal VALUES (30,29);
+INSERT INTO Animal_has_Animal VALUES (89,90);
+INSERT INTO Animal_has_Animal VALUES (91,89);
+INSERT INTO Animal_has_Animal VALUES (91,90);
+INSERT INTO Animal_has_Animal VALUES (137,136);
+INSERT INTO Animal_has_Animal VALUES (137,140);
+INSERT INTO Animal_has_Animal VALUES (138,136);
+INSERT INTO Animal_has_Animal VALUES (138,137);
+INSERT INTO Animal_has_Animal VALUES (138,140);
+INSERT INTO Animal_has_Animal VALUES (62,64);
+INSERT INTO Animal_has_Animal VALUES (62,65);
+INSERT INTO Animal_has_Animal VALUES (62,66);
+INSERT INTO Animal_has_Animal VALUES (63,62);
+INSERT INTO Animal_has_Animal VALUES (63,64);
+INSERT INTO Animal_has_Animal VALUES (63,65);
+INSERT INTO Animal_has_Animal VALUES (63,66);
+INSERT INTO Animal_has_Animal VALUES (133,135);
+INSERT INTO Animal_has_Animal VALUES (134,133);
+INSERT INTO Animal_has_Animal VALUES (134,135);
+INSERT INTO Animal_has_Animal VALUES (85,86);
+INSERT INTO Animal_has_Animal VALUES (85,87);
+INSERT INTO Animal_has_Animal VALUES (86,87);
+INSERT INTO Animal_has_Animal VALUES (76,77);
+INSERT INTO Animal_has_Animal VALUES (83,84);
+INSERT INTO Animal_has_Animal VALUES (81,80);
+INSERT INTO Animal_has_Animal VALUES (81,82);
+INSERT INTO Animal_has_Animal VALUES (82,80);
+INSERT INTO Animal_has_Animal VALUES (2,1);
+INSERT INTO Animal_has_Animal VALUES (14,13);
+INSERT INTO Animal_has_Animal VALUES (14,15);
+INSERT INTO Animal_has_Animal VALUES (15,13);
+INSERT INTO Animal_has_Animal VALUES (71,72);
+INSERT INTO Animal_has_Animal VALUES (71,73);
+INSERT INTO Animal_has_Animal VALUES (71,74);
+INSERT INTO Animal_has_Animal VALUES (72,73);
+INSERT INTO Animal_has_Animal VALUES (72,74);
+INSERT INTO Animal_has_Animal VALUES (24,25);
+INSERT INTO Animal_has_Animal VALUES (107,108);
+INSERT INTO Animal_has_Animal VALUES (9,10);
+INSERT INTO Animal_has_Animal VALUES (9,12);
+INSERT INTO Animal_has_Animal VALUES (12,10);
+
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (1,2,17,'1977-4-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (1,7,19,'1976-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (1,12,21,'1976-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (1,14,9,'1976-12-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (2,2,19,'2001-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (2,7,15,'2001-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (2,12,19,'2002-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (2,14,2,'2001-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (3,2,14,'2008-7-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (3,7,5,'2007-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (3,12,11,'2007-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (4,2,19,'2016-3-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (4,7,3,'2017-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (4,12,17,'2017-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (5,2,11,'1990-1-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (5,7,15,'1990-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (5,12,2,'1990-7-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (6,2,6,'2010-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (6,7,13,'2010-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (6,12,12,'2010-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (7,2,24,'1970-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (7,7,10,'1971-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (7,12,21,'1970-3-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (8,2,1,'2010-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (8,7,6,'2010-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (8,15,1,'2010-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (9,1,18,'2008-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (9,2,17,'2008-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (9,5,1,'2008-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (9,7,8,'2009-1-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (9,15,8,'2009-7-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (10,1,17,'1972-3-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (10,2,6,'1971-1-5');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (10,5,23,'1971-9-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (10,7,20,'1972-1-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (10,15,3,'1971-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (11,1,15,'2010-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (11,2,22,'2010-5-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (11,5,24,'2010-1-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (11,7,7,'2010-3-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (11,15,13,'2011-2-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (12,1,1,'1997-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (12,2,15,'1997-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (12,5,8,'1997-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (12,7,16,'1996-1-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (12,15,16,'1996-1-18');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (13,2,12,'2000-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (13,6,22,'2000-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (13,7,5,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (13,15,11,'2001-12-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (14,2,7,'2018-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (14,6,21,'2018-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (14,7,4,'2018-9-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (14,15,23,'2019-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (15,2,2,'2004-1-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (15,6,1,'2004-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (15,7,4,'2004-6-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (15,15,3,'2005-7-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (16,2,9,'1983-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (16,7,12,'1983-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (16,15,10,'1983-1-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (17,2,18,'1985-1-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (17,7,12,'1986-3-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (17,15,6,'1985-9-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (18,2,16,'1975-4-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (18,4,25,'1975-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (18,6,23,'1975-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (18,7,23,'1975-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (18,15,23,'1976-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (19,2,6,'2018-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (19,4,25,'2018-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (19,6,1,'2017-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (19,7,15,'2017-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (19,15,10,'2018-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (20,2,22,'2005-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (20,4,15,'2004-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (20,6,4,'2004-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (20,7,4,'2004-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (20,15,11,'2004-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (21,2,18,'2016-8-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (21,6,19,'2016-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (21,7,5,'2016-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (21,15,8,'2016-3-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (22,2,8,'2005-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (22,6,25,'2005-12-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (22,7,25,'2005-1-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (22,15,23,'2005-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (23,2,6,'2013-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (23,6,24,'2014-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (23,7,15,'2013-9-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (23,15,16,'2014-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (24,2,22,'2010-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (24,7,6,'2010-9-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (24,15,11,'2010-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (25,2,2,'1994-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (25,7,12,'1994-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (25,15,6,'1994-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (26,2,13,'1993-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (26,7,15,'1993-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (26,15,23,'1994-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (27,2,22,'1976-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (27,7,8,'1976-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (27,15,24,'1975-2-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (28,2,8,'1993-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (28,7,14,'1992-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (28,15,13,'1992-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (29,2,6,'1998-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (29,7,4,'1999-1-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (29,15,1,'1999-5-18');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (30,2,19,'2001-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (30,7,15,'2002-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (30,15,4,'2001-5-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (31,2,5,'1992-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (31,7,16,'1992-11-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (31,15,24,'1992-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (32,2,10,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (32,7,6,'2001-4-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (32,15,11,'2001-8-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (33,2,6,'1979-8-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (33,7,17,'1979-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (33,15,13,'1979-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (34,2,20,'2004-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (34,7,5,'2003-10-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (34,15,12,'2003-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (35,2,1,'2020-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (35,7,16,'2019-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (35,15,13,'2020-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (36,2,20,'2013-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (36,7,21,'2013-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (36,15,12,'2013-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (37,2,23,'2002-9-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (37,7,21,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (37,15,6,'2002-2-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (38,2,23,'2001-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (38,7,9,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (38,13,12,'2001-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (38,15,13,'2001-4-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (39,2,10,'2006-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (39,7,3,'2005-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (39,13,3,'2006-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (39,15,5,'2005-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (40,2,5,'1970-8-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (40,7,22,'1970-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (40,13,5,'1970-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (40,15,22,'1970-4-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (41,2,3,'1998-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (41,7,8,'1998-8-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (41,13,6,'1998-2-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (41,15,15,'1998-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (42,2,13,'1989-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (42,7,18,'1989-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (42,13,25,'1990-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (42,15,18,'1989-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (43,2,16,'1977-9-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (43,7,18,'1977-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (43,13,10,'1976-1-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (43,15,5,'1976-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (44,2,24,'1994-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (44,7,1,'1994-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (44,13,23,'1995-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (44,15,22,'1994-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (45,2,7,'2012-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (45,7,11,'2012-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (45,15,1,'2012-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (46,2,6,'2008-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (46,7,17,'2008-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (46,15,7,'2007-9-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (47,2,1,'1970-1-5');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (47,7,20,'1970-10-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (47,15,6,'1970-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (48,2,19,'2013-1-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (48,7,21,'2013-2-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (48,15,10,'2013-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (49,2,25,'1994-4-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (49,7,16,'1993-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (49,15,22,'1993-12-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (50,2,21,'2006-7-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (50,7,12,'2006-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (50,15,5,'2005-5-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (51,2,20,'2012-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (51,7,24,'2011-7-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (51,15,11,'2011-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (52,2,9,'1990-2-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (52,7,3,'1991-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (52,15,17,'1990-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (53,2,12,'1989-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (53,7,9,'1990-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (53,15,21,'1989-1-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (54,2,23,'2020-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (54,7,3,'2020-11-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (54,15,1,'2019-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (55,2,6,'1977-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (55,7,16,'1976-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (55,15,4,'1976-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (56,2,25,'1993-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (56,7,1,'1993-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (56,15,16,'1993-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (57,2,13,'2013-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (57,7,10,'2012-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (57,15,4,'2012-3-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (58,2,9,'2011-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (58,7,12,'2012-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (58,15,18,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (59,2,6,'2010-10-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (59,4,10,'2010-7-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (59,7,12,'2010-12-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (59,15,18,'2010-5-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (60,2,4,'1993-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (60,4,7,'1993-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (60,7,11,'1993-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (60,15,3,'1993-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (61,2,16,'2019-8-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (61,4,13,'2019-7-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (61,7,24,'2019-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (61,15,3,'2020-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (62,2,7,'2008-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (62,7,3,'2008-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (62,15,10,'2008-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (63,2,13,'2019-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (63,7,6,'2020-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (63,15,10,'2019-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (64,2,14,'1991-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (64,7,22,'1992-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (64,15,9,'1992-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (65,2,24,'1985-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (65,7,25,'1985-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (65,15,23,'1986-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (66,2,6,'1983-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (66,7,23,'1982-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (66,15,4,'1982-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (67,2,17,'2010-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (67,3,18,'2010-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (67,7,21,'2010-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (67,15,9,'2010-3-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (68,2,3,'2009-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (68,3,25,'2009-1-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (68,7,11,'2009-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (68,15,13,'2009-1-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (69,2,21,'1974-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (69,3,15,'1973-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (69,7,21,'1973-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (69,15,16,'1973-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (70,2,23,'1991-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (70,3,11,'1991-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (70,7,17,'1991-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (70,15,23,'1991-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (71,2,24,'2017-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (71,7,11,'2017-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (71,8,14,'2018-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (71,11,5,'2018-6-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (71,15,12,'2017-1-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (72,2,1,'2012-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (72,7,24,'2013-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (72,8,23,'2012-9-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (72,11,14,'2012-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (72,15,20,'2012-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (73,2,7,'1996-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (73,7,17,'1997-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (73,8,12,'1996-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (73,11,3,'1996-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (73,15,6,'1997-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (74,2,13,'1986-4-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (74,7,23,'1986-1-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (74,8,19,'1986-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (74,11,4,'1986-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (74,15,20,'1986-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (75,2,4,'2007-1-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (75,7,5,'2008-1-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (75,13,18,'2007-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (75,15,10,'2007-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (76,2,6,'2016-4-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (76,7,22,'2015-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (76,15,5,'2015-1-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (77,2,11,'2004-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (77,7,22,'2004-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (77,15,16,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (78,2,11,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (78,3,2,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (78,7,16,'2005-7-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (78,15,22,'2005-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (79,2,8,'1998-1-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (79,3,15,'1998-6-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (79,7,20,'1999-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (79,15,22,'1999-10-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (80,2,19,'1981-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (80,7,3,'1981-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (80,13,5,'1981-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (80,15,5,'1981-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (81,2,17,'2012-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (81,7,11,'2011-9-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (81,13,17,'2012-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (81,15,3,'2012-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (82,2,2,'2006-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (82,7,15,'2005-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (82,13,14,'2005-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (82,15,23,'2005-1-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (83,2,22,'2010-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (83,3,13,'2010-12-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (83,6,17,'2010-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (83,7,16,'2010-8-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (83,15,1,'2010-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (84,2,15,'1990-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (84,3,7,'1990-10-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (84,6,20,'1991-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (84,7,9,'1991-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (84,15,7,'1991-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (85,2,20,'2014-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (85,7,20,'2015-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (85,15,8,'2014-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (86,2,11,'1994-1-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (86,7,16,'1994-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (86,15,9,'1995-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (87,2,13,'1979-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (87,7,17,'1979-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (87,15,13,'1980-12-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (88,2,17,'2015-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (88,7,12,'2014-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (88,15,23,'2014-1-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (89,2,9,'1999-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (89,7,19,'1999-1-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (89,8,2,'1999-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (89,15,21,'1999-1-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (90,2,3,'1981-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (90,7,15,'1981-10-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (90,8,1,'1982-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (90,15,10,'1981-1-18');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (91,2,25,'2012-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (91,7,8,'2012-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (91,8,9,'2012-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (91,15,9,'2013-1-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (92,2,1,'1999-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (92,7,25,'1999-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (92,11,7,'1999-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (92,15,9,'1999-4-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (93,2,8,'1978-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (93,7,14,'1979-12-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (93,11,3,'1978-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (93,15,6,'1978-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (94,2,22,'1975-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (94,7,18,'1975-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (94,11,19,'1974-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (94,15,17,'1974-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (95,2,15,'1983-1-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (95,7,24,'1983-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (95,11,3,'1983-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (95,15,19,'1983-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (96,2,10,'2002-8-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (96,7,22,'2002-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (96,11,15,'2002-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (96,15,17,'2003-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (97,2,22,'1993-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (97,7,18,'1993-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (97,15,17,'1993-9-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (98,2,24,'1990-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (98,4,10,'1989-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (98,7,6,'1989-9-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (98,15,10,'1989-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (99,2,5,'1972-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (99,4,23,'1971-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (99,7,2,'1971-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (99,15,7,'1971-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (100,2,22,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (100,4,18,'2005-6-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (100,7,21,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (100,15,6,'2005-1-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (101,2,10,'1984-5-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (101,7,13,'1984-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (101,8,14,'1984-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (101,15,3,'1984-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (102,2,1,'2016-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (102,7,23,'2016-1-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (102,8,19,'2016-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (102,15,20,'2017-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (103,2,8,'2000-12-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (103,7,14,'2000-1-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (103,8,11,'2000-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (103,15,5,'2001-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (104,2,13,'1979-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (104,7,15,'1979-4-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (104,12,22,'1979-2-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (104,15,18,'1979-6-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (105,2,6,'2013-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (105,7,25,'2012-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (105,12,4,'2012-1-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (105,15,19,'2012-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (106,2,1,'2020-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (106,7,25,'2019-5-26');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (106,12,9,'2019-3-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (106,15,7,'2020-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (107,2,20,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (107,3,18,'2004-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (107,7,16,'2005-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (107,15,20,'2004-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (108,2,23,'1972-4-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (108,3,14,'1972-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (108,7,9,'1973-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (108,15,2,'1972-4-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (109,2,2,'1971-10-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (109,7,2,'1971-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (109,9,24,'1972-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (109,15,17,'1971-5-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (110,2,24,'1980-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (110,7,2,'1980-1-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (110,9,23,'1980-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (110,15,8,'1980-10-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (111,2,12,'2009-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (111,7,9,'2009-1-28');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (111,9,17,'2009-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (111,15,3,'2009-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (112,1,10,'1993-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (112,2,18,'1992-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (112,5,13,'1992-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (112,7,12,'1992-1-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (112,15,4,'1993-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (113,1,3,'1984-7-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (113,2,16,'1984-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (113,5,24,'1984-11-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (113,7,10,'1985-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (113,15,3,'1984-9-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (114,1,19,'2003-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (114,2,15,'2002-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (114,5,21,'2002-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (114,7,18,'2002-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (114,15,21,'2003-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (115,1,13,'2003-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (115,2,8,'2002-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (115,5,11,'2003-7-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (115,7,4,'2002-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (115,15,18,'2003-8-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (116,2,22,'1972-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (116,3,2,'1972-5-20');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (116,7,9,'1973-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (116,15,9,'1973-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (117,2,3,'1998-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (117,3,1,'1999-1-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (117,7,15,'1998-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (117,15,17,'1998-1-12');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (118,2,2,'2000-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (118,3,21,'2000-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (118,7,11,'1999-1-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (118,15,20,'2000-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (119,2,9,'2001-2-6');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (119,3,11,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (119,7,10,'2001-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (119,15,23,'2001-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (120,2,20,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (120,3,1,'2011-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (120,7,16,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (120,15,8,'2011-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (121,2,18,'2016-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (121,3,10,'2016-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (121,7,13,'2017-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (121,15,19,'2017-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (122,2,7,'2005-1-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (122,7,13,'2006-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (122,8,21,'2005-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (122,15,9,'2005-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (123,2,9,'2011-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (123,7,22,'2010-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (123,8,6,'2010-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (123,15,14,'2010-12-10');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (124,2,19,'1991-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (124,7,14,'1992-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (124,8,23,'1991-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (124,15,1,'1991-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (125,2,5,'2019-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (125,7,13,'2019-9-21');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (125,8,18,'2019-2-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (125,15,6,'2020-4-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (126,2,11,'2001-1-27');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (126,7,7,'2002-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (126,8,23,'2001-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (126,15,3,'2001-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (127,2,10,'1988-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (127,3,3,'1988-8-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (127,7,9,'1988-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (127,15,16,'1989-2-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (128,2,21,'1984-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (128,3,2,'1984-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (128,7,13,'1984-1-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (128,15,13,'1984-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (129,2,6,'1977-7-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (129,3,2,'1977-2-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (129,7,1,'1977-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (129,15,19,'1978-1-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,2,21,'1983-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,7,13,'1983-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,8,16,'1984-8-11');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,9,25,'1983-9-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,11,4,'1983-9-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (130,15,8,'1983-1-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,2,22,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,7,9,'2012-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,8,4,'2012-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,9,24,'2011-2-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,11,16,'2011-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (131,15,10,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,2,3,'2014-12-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,7,1,'2014-11-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,8,10,'2014-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,9,3,'2014-3-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,11,9,'2014-11-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (132,15,11,'2014-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (133,1,17,'2004-11-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (133,2,21,'2005-1-3');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (133,7,23,'2005-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (133,15,4,'2004-1-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (134,1,3,'2009-6-7');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (134,2,24,'2009-6-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (134,7,11,'2010-3-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (134,15,8,'2010-1-9');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (135,1,12,'1980-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (135,2,4,'1979-1-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (135,7,25,'1979-10-24');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (135,15,14,'1979-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (136,2,4,'1977-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (136,7,16,'1977-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (136,8,4,'1977-10-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (136,10,11,'1977-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (136,15,14,'1977-12-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (137,2,17,'1987-4-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (137,7,15,'1986-6-17');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (137,8,24,'1986-7-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (137,10,16,'1986-10-16');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (137,15,24,'1987-8-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (138,2,11,'2011-1-15');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (138,7,2,'2010-1-23');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (138,8,10,'2011-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (138,10,8,'2011-1-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (138,15,12,'2010-4-13');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (139,2,21,'2008-4-22');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (139,7,3,'2008-9-2');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (139,8,3,'2009-1-14');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (139,10,3,'2008-1-1');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (139,15,17,'2008-11-4');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (140,2,11,'1976-1-19');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (140,7,15,'1976-4-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (140,8,24,'1976-1-8');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (140,10,18,'1976-3-25');
+INSERT INTO Animal_has_Vacina_has_Veterinario VALUES (140,15,8,'1977-11-1');
+
