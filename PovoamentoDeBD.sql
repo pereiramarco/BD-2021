@@ -556,56 +556,56 @@ INSERT INTO Contacto_Veterinario VALUES (24,"938202593");
 INSERT INTO Contacto_Veterinario VALUES (25,"2594549153");
 INSERT INTO Contacto_Veterinario VALUES (25,"tertulianosaraiva568@outlook.com");
 
-INSERT INTO Recinto VALUES (1,0,0,2.4,"Oceano",0,9); -- 43
-INSERT INTO Recinto VALUES (2,10,0,2.7,"Oceano",0,9); -- 10
-INSERT INTO Recinto VALUES (3,20,0,1.1,"Pólo",0,7); -- 49
-INSERT INTO Recinto VALUES (4,30,0,2.0,"Pólo",0,7); -- 50
-INSERT INTO Recinto VALUES (5,40,0,1.7,"Floresta Tropical",0,2); -- 44
-INSERT INTO Recinto VALUES (6,0,10,3.8,"Floresta Tropical",0,2); -- 39
-INSERT INTO Recinto VALUES (7,10,10,2.2,"Floresta Tropical",0,2); -- 3
-INSERT INTO Recinto VALUES (8,20,10,3.3,"Floresta Tropical",0,8); -- 4
-INSERT INTO Recinto VALUES (9,30,10,2.9,"Floresta Tropical",0,8); -- 7
-INSERT INTO Recinto VALUES (10,40,10,3.6,"Floresta Tropical",0,4); -- 47
-INSERT INTO Recinto VALUES (11,0,20,2.2,"Floresta Tropical",0,4); -- 46
-INSERT INTO Recinto VALUES (12,10,20,1.0,"Floresta Tropical",0,4); -- 32
-INSERT INTO Recinto VALUES (13,20,20,3.9,"Floresta Tropical",0,4); -- 30
-INSERT INTO Recinto VALUES (14,30,20,1.9,"Floresta Tropical",0,4); -- 19
-INSERT INTO Recinto VALUES (15,40,20,3.7,"Floresta Tropical",0,1); -- 24
-INSERT INTO Recinto VALUES (16,0,30,1.8,"Floresta Tropical",0,1); -- 26
-INSERT INTO Recinto VALUES (17,10,30,2.6,"Floresta Tropical",0,1); -- 27
-INSERT INTO Recinto VALUES (18,20,30,0.3,"Floresta Tropical",0,8); -- 31
-INSERT INTO Recinto VALUES (19,30,30,3.7,"Pântano",0,5); -- 28
-INSERT INTO Recinto VALUES (20,40,30,1.1,"Pântano",0,4); -- 23
-INSERT INTO Recinto VALUES (21,0,40,2.7,"Pântano",0,5); -- 22
-INSERT INTO Recinto VALUES (22,10,40,0.2,"Pântano",0,4); -- 13
-INSERT INTO Recinto VALUES (23,20,40,3.5,"Pântano",0,4); -- 9
-INSERT INTO Recinto VALUES (24,30,40,3.8,"Floresta",0,6); -- 6
-INSERT INTO Recinto VALUES (25,40,40,0.0,"Floresta",0,6); -- 35
-INSERT INTO Recinto VALUES (26,0,50,3.5,"Floresta",0,3); -- 1
-INSERT INTO Recinto VALUES (27,10,50,3.6,"Rio",0,5); -- 45
-INSERT INTO Recinto VALUES (28,20,50,2.5,"Rio",0,1); -- 42
-INSERT INTO Recinto VALUES (29,30,50,0.4,"Rio",0,5); -- 38
-INSERT INTO Recinto VALUES (30,40,50,2.7,"Savana",0,5); -- 2
-INSERT INTO Recinto VALUES (31,0,60,1.6,"Savana",0,5); -- 41
-INSERT INTO Recinto VALUES (32,10,60,1.7,"Savana",0,3); -- 40
-INSERT INTO Recinto VALUES (33,20,60,3.5,"Savana",0,5); -- 37
-INSERT INTO Recinto VALUES (34,30,60,2.7,"Savana",0,5); -- 33
-INSERT INTO Recinto VALUES (35,40,60,2.9,"Savana",0,5); -- 20
-INSERT INTO Recinto VALUES (36,0,70,3.5,"Savana",0,8); -- 18
-INSERT INTO Recinto VALUES (37,10,70,3.0,"Savana",0,5); -- 15
-INSERT INTO Recinto VALUES (38,20,70,3.9,"Savana",0,5); -- 14
-INSERT INTO Recinto VALUES (39,30,70,3.9,"Savana",0,8); -- 12
-INSERT INTO Recinto VALUES (40,40,70,1.3,"Savana",0,5); -- 11
-INSERT INTO Recinto VALUES (41,0,80,2.7,"Montanha",0,3); -- 48
-INSERT INTO Recinto VALUES (42,10,80,1.5,"Montanha",0,5); -- 25
-INSERT INTO Recinto VALUES (43,20,80,2.3,"Montanha",0,5); -- 21
-INSERT INTO Recinto VALUES (44,30,80,3.9,"Montanha",0,3); -- 17
-INSERT INTO Recinto VALUES (45,40,80,0.8,"Montanha",0,3); -- 5
-INSERT INTO Recinto VALUES (46,0,90,1.9,"Planície Temperada",0,5); -- 29
-INSERT INTO Recinto VALUES (47,10,90,2.1,"Planície Temperada",0,3); -- 16
-INSERT INTO Recinto VALUES (48,20,90,1.5,"Planície Temperada",0,5); -- 8
-INSERT INTO Recinto VALUES (49,30,90,0.2,"Deserto",0,5); -- 36
-INSERT INTO Recinto VALUES (50,40,90,0.1,"Deserto",0,5); -- 34
+INSERT INTO Recinto VALUES (1,0,0,2.4,"Oceano",9); -- 43
+INSERT INTO Recinto VALUES (2,10,0,2.7,"Oceano",9); -- 10
+INSERT INTO Recinto VALUES (3,20,0,1.1,"Pólo",7); -- 49
+INSERT INTO Recinto VALUES (4,30,0,2.0,"Pólo",7); -- 50
+INSERT INTO Recinto VALUES (5,40,0,1.7,"Floresta Tropical",2); -- 44
+INSERT INTO Recinto VALUES (6,0,10,3.8,"Floresta Tropical",2); -- 39
+INSERT INTO Recinto VALUES (7,10,10,2.2,"Floresta Tropical",2); -- 3
+INSERT INTO Recinto VALUES (8,20,10,3.3,"Floresta Tropical",8); -- 4
+INSERT INTO Recinto VALUES (9,30,10,2.9,"Floresta Tropical",8); -- 7
+INSERT INTO Recinto VALUES (10,40,10,3.6,"Floresta Tropical",4); -- 47
+INSERT INTO Recinto VALUES (11,0,20,2.2,"Floresta Tropical",4); -- 46
+INSERT INTO Recinto VALUES (12,10,20,1.0,"Floresta Tropical",4); -- 32
+INSERT INTO Recinto VALUES (13,20,20,3.9,"Floresta Tropical",4); -- 30
+INSERT INTO Recinto VALUES (14,30,20,1.9,"Floresta Tropical",4); -- 19
+INSERT INTO Recinto VALUES (15,40,20,3.7,"Floresta Tropical",1); -- 24
+INSERT INTO Recinto VALUES (16,0,30,1.8,"Floresta Tropical",1); -- 26
+INSERT INTO Recinto VALUES (17,10,30,2.6,"Floresta Tropical",1); -- 27
+INSERT INTO Recinto VALUES (18,20,30,0.3,"Floresta Tropical",8); -- 31
+INSERT INTO Recinto VALUES (19,30,30,3.7,"Pântano",5); -- 28
+INSERT INTO Recinto VALUES (20,40,30,1.1,"Pântano",4); -- 23
+INSERT INTO Recinto VALUES (21,0,40,2.7,"Pântano",5); -- 22
+INSERT INTO Recinto VALUES (22,10,40,0.2,"Pântano",4); -- 13
+INSERT INTO Recinto VALUES (23,20,40,3.5,"Pântano",4); -- 9
+INSERT INTO Recinto VALUES (24,30,40,3.8,"Floresta",6); -- 6
+INSERT INTO Recinto VALUES (25,40,40,0.0,"Floresta",6); -- 35
+INSERT INTO Recinto VALUES (26,0,50,3.5,"Floresta",3); -- 1
+INSERT INTO Recinto VALUES (27,10,50,3.6,"Rio",5); -- 45
+INSERT INTO Recinto VALUES (28,20,50,2.5,"Rio",1); -- 42
+INSERT INTO Recinto VALUES (29,30,50,0.4,"Rio",5); -- 38
+INSERT INTO Recinto VALUES (30,40,50,2.7,"Savana",5); -- 2
+INSERT INTO Recinto VALUES (31,0,60,1.6,"Savana",5); -- 41
+INSERT INTO Recinto VALUES (32,10,60,1.7,"Savana",3); -- 40
+INSERT INTO Recinto VALUES (33,20,60,3.5,"Savana",5); -- 37
+INSERT INTO Recinto VALUES (34,30,60,2.7,"Savana",5); -- 33
+INSERT INTO Recinto VALUES (35,40,60,2.9,"Savana",5); -- 20
+INSERT INTO Recinto VALUES (36,0,70,3.5,"Savana",8); -- 18
+INSERT INTO Recinto VALUES (37,10,70,3.0,"Savana",5); -- 15
+INSERT INTO Recinto VALUES (38,20,70,3.9,"Savana",5); -- 14
+INSERT INTO Recinto VALUES (39,30,70,3.9,"Savana",8); -- 12
+INSERT INTO Recinto VALUES (40,40,70,1.3,"Savana",5); -- 11
+INSERT INTO Recinto VALUES (41,0,80,2.7,"Montanha",3); -- 48
+INSERT INTO Recinto VALUES (42,10,80,1.5,"Montanha",5); -- 25
+INSERT INTO Recinto VALUES (43,20,80,2.3,"Montanha",5); -- 21
+INSERT INTO Recinto VALUES (44,30,80,3.9,"Montanha",3); -- 17
+INSERT INTO Recinto VALUES (45,40,80,0.8,"Montanha",3); -- 5
+INSERT INTO Recinto VALUES (46,0,90,1.9,"Planície Temperada",5); -- 29
+INSERT INTO Recinto VALUES (47,10,90,2.1,"Planície Temperada",3); -- 16
+INSERT INTO Recinto VALUES (48,20,90,1.5,"Planície Temperada",5); -- 8
+INSERT INTO Recinto VALUES (49,30,90,0.2,"Deserto",5); -- 36
+INSERT INTO Recinto VALUES (50,40,90,0.1,"Deserto",5); -- 34
 
 INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (1,"Masculino",'1976-10-5',0.60,3.63,538.712,1,1,43);
 INSERT INTO Animal (idAnimal,genero,data_nascimento,altura,comprimento,peso,vivo,Recinto_ID,Especie_idEspecie) VALUES (2,"Masculino",'2001-5-30',0.58,4.15,564.632,0,1,43);

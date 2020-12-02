@@ -51,7 +51,6 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Recinto` (
   `coord_x` INT NOT NULL,
   `area` FLOAT NOT NULL,
   `bioma` VARCHAR(100) NOT NULL,
-  `total_animais` INT NOT NULL,
   `Zona_idZona` INT NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `fk_Recinto_Zona1_idx` (`Zona_idZona` ASC) VISIBLE,
