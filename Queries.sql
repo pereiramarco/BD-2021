@@ -29,38 +29,63 @@ SELECT Padrinho_idPadrinho AS IDPadrinho, SUM(E.valor_de_apadrinhamento) AS Valo
 
 SELECT Animal_idAnimalFilho AS IDCria
 	FROM Animal_has_Animal
-    WHERE Animal_idAnimalProgenitor=2;
+    WHERE Animal_idAnimalProgenitor=16;
     
 -- -----------------------QUERY 4-------------------------
 -- Determinar todos os descendentes de um animal no zoo --
 -- -------------------------------------------------------
 
-WITH RECURSIVE sub_tree AS (
-  SELECT id, name, 1 AS relative_depth
-  FROM categories
-  WHERE name = 'Child A1'
-
-  UNION ALL
-
-  SELECT cat.id, cat.name, st.relative_depth + 1
-  FROM categories cat, sub_tree st
-  WHERE cat.parent_id = st.id
-)
-SELECT * FROM sub_tree;
-
-
-WITH RECURSIVE parents AS (
-  SELECT Animal_idAnimalFilho, Animal_idAnimalProgenitor, 1 AS relative_depth
+WITH RECURSIVE arvoreDescendente AS (
+  SELECT Animal_idAnimalProgenitor AS IDProgenitor,Animal_idAnimalFilho AS IDCria, 1 AS Profundidade_Relativa
   FROM Animal_has_Animal
-  WHERE id = 6
+  WHERE Animal_idAnimalProgenitor = 16
 
   UNION ALL
 
-  SELECT an.Animal_idAnimalProgenitor, an.Animal_idAnimalFilho, p.relative_depth + 1
-  FROM Animal_has_Animal an, parents p
-  WHERE an.Animal_idAnimalProgenitor = p.id
+  SELECT pais.Animal_idAnimalProgenitor, pais.Animal_idAnimalFilho, aD.Profundidade_Relativa + 1
+  FROM Animal_has_Animal pais, arvoreDescendente aD
+  WHERE pais.Animal_idAnimalProgenitor = aD.IDCria
 )
-SELECT id, name, relative_depth FROM parents;
+SELECT * FROM arvoreDescendente;
+
+-- -------------------------QUERY 5---------------------------
+-- Consultar os progenitores de um animal existentes no zoo --
+-- -----------------------------------------------------------
+
+SELECT Animal_idAnimalProgenitor AS IDCria
+	FROM Animal_has_Animal
+    WHERE Animal_idAnimalFilho=11;
+    
+-- ---------------------------QUERY 6----------------------------
+-- Mostrar todos os ascendentes de um animal existentes no zoo --
+-- --------------------------------------------------------------
+
+
+WITH RECURSIVE arvoreAscendente AS (
+  SELECT Animal_idAnimalFilho AS IDCria, Animal_idAnimalProgenitor AS IDProgenitor, -1 AS Profundidade_Relativa
+  FROM Animal_has_Animal
+  WHERE Animal_idAnimalFilho = 12
+
+  UNION ALL
+
+  SELECT pais.Animal_idAnimalFilho, pais.Animal_idAnimalProgenitor, aA.Profundidade_Relativa - 1
+  FROM Animal_has_Animal pais, arvoreAscendente aA
+  WHERE pais.Animal_idAnimalFilho = aA.IDProgenitor
+)
+SELECT * FROM arvoreAscendente;
+
+-- -------------------------QUERY 8----------------------------------------------
+-- Consultar quantos animais, vivos, existem em cada bioma do jardim zoológico --
+-- ------------------------------------------------------------------------------
+
+SELECT bioma AS Bioma, COUNT() AS NAnimaisVivos
+	FROM Recinto
+    GROUP BY bioma;
+
+
+
+
+
 
 
 
