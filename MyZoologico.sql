@@ -1,7 +1,5 @@
 -- MySQL Workbench Forward Engineering
 
-DROP SCHEMA BD_Zoologico;
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -13,7 +11,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema BD_Zoologico
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `BD_Zoologico` ;
+DROP SCHEMA IF EXISTS `BD_Zoologico` ;
+CREATE SCHEMA `BD_Zoologico` ;
 -- -----------------------------------------------------
 -- Schema test
 -- -----------------------------------------------------
@@ -26,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Padrinho` (
   `idPadrinho` INT NOT NULL,
   `nome` VARCHAR(50) NOT NULL,
   `nib` VARCHAR(39) NOT NULL,
-  `cartao_cidadao` VARCHAR(40) NOT NULL,
-  `nif` VARCHAR(20) NOT NULL,
+  `cartao_cidadao` VARCHAR(14) NOT NULL,
+  `nif` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`idPadrinho`))
 ENGINE = InnoDB;
 
@@ -234,8 +233,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Especie_has_Vacina` (
   `Especie_idEspecie` INT NOT NULL,
   `Vacina_idVacina` INT NOT NULL,
-  `limite_temporal` DATE NOT NULL,
-  `intervalo_temporal` DATE NULL,
+  `limite_temporal` INT NOT NULL,
+  `intervalo_temporal` INT NULL,
   `doses_necessarias` INT NOT NULL,
   `dosagem` INT NOT NULL,
   INDEX `fk_Especie_has_Vacina_Vacina1_idx` (`Vacina_idVacina` ASC) VISIBLE,
