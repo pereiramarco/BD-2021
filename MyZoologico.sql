@@ -12,7 +12,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema BD_Zoologico
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `BD_Zoologico` ;
-CREATE SCHEMA `BD_Zoologico` ;
+CREATE SCHEMA IF NOT EXISTS `BD_Zoologico` ;
 -- -----------------------------------------------------
 -- Schema test
 -- -----------------------------------------------------
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `BD_Zoologico`.`Animal_has_Vacina_has_Veterinario` (
   INDEX `fk_Animal_has_Vacina_Vacina1_idx` (`Vacina_idVacina` ASC) VISIBLE,
   INDEX `fk_Animal_has_Vacina_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
   INDEX `fk_Animal_has_Vacina_has_Veterinario_Veterinario1_idx` (`Veterinario_idVeterinario` ASC) VISIBLE,
-  PRIMARY KEY (`Animal_idAnimal`, `Vacina_idVacina`, `Veterinario_idVeterinario`),
+  PRIMARY KEY (`Animal_idAnimal`, `Vacina_idVacina`, `Veterinario_idVeterinario`, `data_administracao`),
   CONSTRAINT `fk_Animal_has_Vacina_Animal1`
     FOREIGN KEY (`Animal_idAnimal`)
     REFERENCES `BD_Zoologico`.`Animal` (`idAnimal`)
