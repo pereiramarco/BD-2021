@@ -34,13 +34,12 @@ SELECT Z.nome AS NomeDeZona, COUNT(Z.idZona) AS NúmeroAnimais
 	GROUP BY Z.idZona;
 
 -- --------------------------------------------------------------
--- --------------------------Funções-----------------------------
+-- --------------------------FUNÇÕES-----------------------------
 -- --------------------------------------------------------------
 
 
 -- Função que calcula quantas doses faltam administrar dada uma data de nascimento 
 DELIMITER $$
-DROP FUNCTION IF EXISTS calculaDosesRestantes;
 CREATE FUNCTION calculaDosesRestantes(dataNascimento DATE,limiteTemporal INT, intervaloTemporal INT, dosesNecessarias INT) RETURNS INT
 BEGIN
 	RETURN CEIL(((limiteTemporal + (intervaloTemporal * (dosesNecessarias-1))) - (TIMESTAMPDIFF(MONTH,dataNascimento,CURDATE())))/intervaloTemporal);
