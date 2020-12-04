@@ -197,7 +197,8 @@ DROP VIEW IF EXISTS vwNbilhetesAnos;
 CREATE VIEW vwNBilhetesAno AS
 	SELECT YEAR(B.momento_aquisicao) AS Ano,COUNT(B.idBilhete) AS NumeroBilhetes
 		FROM Bilhete as B
-		GROUP BY YEAR(B.momento_aquisicao);
+		GROUP BY YEAR(B.momento_aquisicao)
+        ORDER BY YEAR(B.momento_aquisicao) DESC;
 
 -- Usa view anterior para ter uma tabela com o ano, o n de bilhetes desse ano e o n de bilhetes do ano anterior
 CREATE VIEW vwNbilhetesAnos AS        
@@ -206,7 +207,7 @@ CREATE VIEW vwNbilhetesAnos AS
 		INNER JOIN (SELECT * FROM vwNBilhetesAno) AS Anterior
 		ON Atual.Ano= Anterior.Ano+1;
 
-SELECT Ano, NumeroBilhetes, (NumeroBilhetes-NumeroBilhetesAnterior)*100/NumeroBilhetes AS CrescimentoPercentagem
+SELECT Ano, NumeroBilhetes, ((NumeroBilhetes-NumeroBilhetesAnterior)/NumeroBilhetesAnterior)*100 AS CrescimentoPercentagem
 	FROM vwNbilhetesAnos;
 
 -- --------------------------QUERY 14-----------------------------
@@ -240,9 +241,9 @@ SELECT va.doenca AS Nome_Vacina, vc.data_administracao AS Data
 			AND a.idAnimal = idAnimal;
 END $$
 
--- ----------------------------------------------QUERY 16------------------------------------------------------
--- Consulta quais vacinas, incluindo doses que se devem repetir, um animal deve tomar num intervalo de tempo --
--- ------------------------------------------------------------------------------------------------------------
+-- ------------------------------------QUERY 16-----------------------------------------------
+-- Consulta quais vacinas, incluindo doses que se devem repetir, um animal ainda deve tomar --
+-- -------------------------------------------------------------------------------------------
 
 DELIMITER $$
 CREATE PROCEDURE vacinasPorDarAnimal
