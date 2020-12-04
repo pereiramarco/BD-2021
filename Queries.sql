@@ -1,5 +1,51 @@
 USE BD_Zoologico;
 
+-- --------------------------------------------------------------
+-- --------------------------VIEWS-------------------------------
+-- --------------------------------------------------------------
+
+
+DROP VIEW IF EXISTS vwNBilhetesAno;
+DROP VIEW IF EXISTS vwNbilhetesAnos;
+
+-- Numero de bilhetes por ano
+CREATE VIEW vwNBilhetesAno AS
+	SELECT YEAR(B.momento_aquisicao) AS Ano,COUNT(B.idBilhete) AS NumeroBilhetes
+		FROM Bilhete as B
+		GROUP BY YEAR(B.momento_aquisicao)
+        ORDER BY YEAR(B.momento_aquisicao) DESC;
+
+-- Usa view anterior para ter uma tabela com o ano, o n de bilhetes desse ano e o n de bilhetes do ano anterior
+CREATE VIEW vwNbilhetesAnos AS        
+	SELECT Atual.Ano AS Ano, Atual.NumeroBilhetes AS NumeroBilhetes, Anterior.NumeroBilhetes AS NumeroBilhetesAnterior
+		FROM (SELECT * FROM vwNBilhetesAno) AS Atual
+		INNER JOIN (SELECT * FROM vwNBilhetesAno) AS Anterior
+		ON Atual.Ano= Anterior.Ano+1;
+
+-- Apresenta o número de animais vivos presentes em cada zona
+CREATE VIEW vwNAnimaisZona AS
+SELECT Z.nome AS NomeDeZona, COUNT(Z.idZona) AS NúmeroAnimais
+    FROM Zona AS Z 
+		INNER JOIN Recinto AS R
+		ON Z.idZona = R.Zona_idZona
+        INNER JOIN Animal AS A
+        ON A.Recinto_ID = R.ID
+	WHERE A.vivo=1
+	GROUP BY Z.idZona;
+
+-- --------------------------------------------------------------
+-- --------------------------Funções-----------------------------
+-- --------------------------------------------------------------
+
+
+-- Função que calcula quantas doses faltam administrar dada uma data de nascimento 
+DELIMITER $$
+DROP FUNCTION IF EXISTS calculaDosesRestantes;
+CREATE FUNCTION calculaDosesRestantes(dataNascimento DATE,limiteTemporal INT, intervaloTemporal INT, dosesNecessarias INT) RETURNS INT
+BEGIN
+	RETURN CEIL(((limiteTemporal + (intervaloTemporal * (dosesNecessarias-1))) - (TIMESTAMPDIFF(MONTH,dataNascimento,CURDATE())))/intervaloTemporal);
+END $$
+
 -- ------------Requisitos de Exploração------------ --
 
 
@@ -104,6 +150,10 @@ END $$
 -- Conhecer todas as espécies que um tipo de bilhete dá acesso  --
 -- ---------------------------------------------------------------
 
+DELIMITER $$
+CREATE PROCEDURE especiesPorTipoBilhete
+	(IN idTipo INT)
+BEGIN
 SELECT E.nome_comum AS NomeComum, E.nome_cientifico AS NomeCientifico, Z.nome AS NomeZona
 	FROM Tipo AS T 
     INNER JOIN Tipo_has_Zona AS TZ
@@ -118,6 +168,7 @@ SELECT E.nome_comum AS NomeComum, E.nome_cientifico AS NomeCientifico, Z.nome AS
 						ON E.idEspecie = A.Especie_idEspecie
 	WHERE T.idTipo=4
     GROUP BY E.idEspecie;
+END $$
 
 -- ---------------------------------QUERY 8--------------------------------------
 -- Consultar quantos animais, existem em cada bioma do jardim zoológico --
@@ -190,26 +241,9 @@ END $$
 -- Saber o crescimento de visitas anual  --
 -- ----------------------------------------
 
-DROP VIEW IF EXISTS vwNBilhetesAno;
-DROP VIEW IF EXISTS vwNbilhetesAnos;
-
--- Numero de bilhetes por ano
-CREATE VIEW vwNBilhetesAno AS
-	SELECT YEAR(B.momento_aquisicao) AS Ano,COUNT(B.idBilhete) AS NumeroBilhetes
-		FROM Bilhete as B
-		GROUP BY YEAR(B.momento_aquisicao)
-        ORDER BY YEAR(B.momento_aquisicao) DESC;
-
--- Usa view anterior para ter uma tabela com o ano, o n de bilhetes desse ano e o n de bilhetes do ano anterior
-CREATE VIEW vwNbilhetesAnos AS        
-	SELECT Atual.Ano AS Ano, Atual.NumeroBilhetes AS NumeroBilhetes, Anterior.NumeroBilhetes AS NumeroBilhetesAnterior
-		FROM (SELECT * FROM vwNBilhetesAno) AS Atual
-		INNER JOIN (SELECT * FROM vwNBilhetesAno) AS Anterior
-		ON Atual.Ano= Anterior.Ano+1;
-
 SELECT Ano, NumeroBilhetes, ((NumeroBilhetes-NumeroBilhetesAnterior)/NumeroBilhetesAnterior)*100 AS CrescimentoPercentagem
 	FROM vwNbilhetesAnos;
-
+    
 -- --------------------------QUERY 14-----------------------------
 -- Saber que veterinarios administraram qual vacina a um animal --
 -- ---------------------------------------------------------------
@@ -246,16 +280,17 @@ END $$
 -- -------------------------------------------------------------------------------------------
 
 DELIMITER $$
+DROP PROCEDURE IF EXISTS vacinasPorDarAnimal;
 CREATE PROCEDURE vacinasPorDarAnimal
 	(IN idAnimal INT)
 BEGIN
-SELECT * FROM Animal a, Especie e, Especie_has_Vacina ev, Vacina v
+SELECT v.doenca as Vacina, calculaDosesRestantes(a.data_nascimento,ev.limite_temporal,ev.intervalo_temporal,ev.doses_necessarias) as Doses_Em_Falta FROM Animal a, Especie e, Especie_has_Vacina ev, Vacina v
 	WHERE a.Especie_idEspecie = e.idEspecie
 		AND e.idEspecie = ev.Especie_idEspecie
 		AND ev.Vacina_idVacina = v.idVacina
-		AND a.idAnimal = idAnimal
+	    AND a.idAnimal = idAnimal
 		AND a.vivo = 1
-		AND (TIMESTAMPDIFF(MONTH,a.data_nascimento,CURDATE())) <= (ev.limite_temporal + (ev.intervalo_temporal * ev.doses_necessarias));
+		AND (TIMESTAMPDIFF(MONTH,a.data_nascimento,CURDATE())) <= (ev.limite_temporal + (ev.intervalo_temporal * (ev.doses_necessarias-1)));
 END $$
 
 -- -----------------QUERY 17------------------
@@ -284,7 +319,3 @@ SELECT e.nome_comum, e.nome_cientifico, AVG(a.peso) AS MediaPeso FROM Especie e,
 		AND e.idEspecie = idEspecie
 			GROUP BY e.idEspecie;
 END $$
-
-
-
-
