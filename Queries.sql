@@ -119,7 +119,6 @@ SELECT E.nome_comum AS NomeComum, E.nome_cientifico AS NomeCientifico, Z.nome AS
 	WHERE T.idTipo=4
     GROUP BY E.idEspecie;
 
-
 -- ---------------------------------QUERY 8--------------------------------------
 -- Consultar quantos animais, existem em cada bioma do jardim zoológico --
 -- ------------------------------------------------------------------------------
@@ -133,6 +132,7 @@ CREATE VIEW vwNAnimaisBioma AS
 -- --------------------QUERY 9------------------------
 -- Calcular o TOP 3 tipo de bilhetes mais comprados --
 -- ---------------------------------------------------
+
 DELIMITER $$
 CREATE PROCEDURE top3TiposBilheteMaisComprado
 	()
@@ -145,13 +145,53 @@ SELECT T.nome AS TipoBilhete, COUNT(B.tipo_idTipo) AS NBilhetesVendidos
     ORDER BY COUNT(B.tipo_idTipo) DESC
     LIMIT 3;
 END $$
-    
+
+-- --------------------QUERY 10----------------------------
+-- Conhecer quantos bilhetes de cada tipo foram vendidos --
+-- --------------------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE nBilhetesTipoSold
+	()
+BEGIN
+SELECT idTipo AS Tipo, COUNT(*) AS Número FROM Bilhete b,Tipo t
+	WHERE b.Tipo_idTipo = t.idTipo
+	GROUP BY idTipo;
+END $$
+
+-- -------QUERY 11-----------
+-- Calcula faturação total --
+-- --------------------------
+
+DELIMITER $$
+CREATE PROCEDURE faturacaoGlobal
+	()
+BEGIN	
+SELECT SUM(preco) AS Faturacao_Global
+	FROM (SELECT * FROM Bilhete b,Tipo t
+	WHERE b.Tipo_idTipo = t.idTipo) as aux;
+END $$ 
+ 
+-- ---------------QUERY 12--------------------
+-- Calcula faturação num intervalo de tempo --
+-- -------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE faturacaoIntervalo
+	(IN dataInicio DATE, dataFim Date)
+BEGIN
+SELECT SUM(preco) AS Faturacao_Intervalo
+	FROM (SELECT * FROM Bilhete b, Tipo t
+		WHERE b.Tipo_idTipo = t.idTipo 
+			AND momento_aquisicao BETWEEN dataInicio AND dataFim) AS aux;
+END $$ 
+
 -- ------------QUERY 13--------------------
 -- Saber o crescimento de visitas anual  --
 -- ----------------------------------------
 
-DROP VIEW vwNBilhetesAno;
-DROP VIEW vwNbilhetesAnos;
+DROP VIEW IF EXISTS vwNBilhetesAno;
+DROP VIEW IF EXISTS vwNbilhetesAnos;
 
 -- Numero de bilhetes por ano
 CREATE VIEW vwNBilhetesAno AS
@@ -169,9 +209,80 @@ CREATE VIEW vwNbilhetesAnos AS
 SELECT Ano, NumeroBilhetes, (NumeroBilhetes-NumeroBilhetesAnterior)*100/NumeroBilhetes AS CrescimentoPercentagem
 	FROM vwNbilhetesAnos;
 
+-- --------------------------QUERY 14-----------------------------
+-- Saber que veterinarios administraram qual vacina a um animal --
+-- ---------------------------------------------------------------
 
+DELIMITER $$
+CREATE PROCEDURE veterinarioVacinaPorAnimal
+	(IN idAnimal INT)
+BEGIN
+SELECT v.nome AS Nome, va.doenca AS Nome_Vacina 
+	FROM Veterinario v, Animal_has_Vacina_has_Veterinario vc, Animal a, Vacina va
+		WHERE v.idVeterinario = vc.Veterinario_idVeterinario 
+			AND vc.Animal_idAnimal = a.idAnimal 
+			AND va.idVacina = vc.Vacina_idVacina 
+			AND a.idAnimal = idAnimal;
+END $$
 
+-- ---------------------------------------QUERY 15---------------------------------------------
+-- Calcula quais vacinas já foram administradas a um animal e o seu momento de administração --
+-- --------------------------------------------------------------------------------------------
 
+DELIMITER $$
+CREATE PROCEDURE vacinaDataPorAnimal
+	(IN idAnimal INT)
+BEGIN
+SELECT va.doenca AS Nome_Vacina, vc.data_administracao AS Data
+	FROM Animal_has_Vacina_has_Veterinario vc, Animal a, Vacina va
+		WHERE vc.Animal_idAnimal = a.idAnimal 
+			AND va.idVacina = vc.Vacina_idVacina 
+			AND a.idAnimal = idAnimal;
+END $$
+
+-- ----------------------------------------------QUERY 16------------------------------------------------------
+-- Consulta quais vacinas, incluindo doses que se devem repetir, um animal deve tomar num intervalo de tempo --
+-- ------------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE vacinasPorDarAnimal
+	(IN idAnimal INT)
+BEGIN
+SELECT * FROM Animal a, Especie e, Especie_has_Vacina ev, Vacina v
+	WHERE a.Especie_idEspecie = e.idEspecie
+		AND e.idEspecie = ev.Especie_idEspecie
+		AND ev.Vacina_idVacina = v.idVacina
+		AND a.idAnimal = idAnimal
+		AND a.vivo = 1
+		AND (TIMESTAMPDIFF(MONTH,a.data_nascimento,CURDATE())) <= (ev.limite_temporal + (ev.intervalo_temporal * ev.doses_necessarias));
+END $$
+
+-- -----------------QUERY 17------------------
+-- Apresenta os contactos de um veterinário --
+-- -------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE contactoVeterinario
+	(IN idVeterinario INT)
+BEGIN
+SELECT * FROM Veterinario v, Contacto_Veterinario cv
+	WHERE v.idVeterinario = cv.Veterinario_idVeterinario
+		AND v.idVeterinario = idVeterinario;
+END $$
+
+-- -----------------------QUERY 18---------------------------
+-- Calcula a média de pesos de animais de uma dada espécie --
+-- ----------------------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE averageWeightSpecies
+	(IN idEspecie INT)
+BEGIN
+SELECT e.nome_comum, e.nome_cientifico, AVG(a.peso) AS MediaPeso FROM Especie e, Animal a
+	WHERE e.idEspecie = a.Especie_idEspecie
+		AND e.idEspecie = idEspecie
+			GROUP BY e.idEspecie;
+END $$
 
 
 
