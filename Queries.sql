@@ -166,9 +166,9 @@ SELECT E.nome_comum AS NomeComum, E.nome_cientifico AS NomeCientifico, Z.nome AS
 					ON A.Recinto_ID = R.ID 
 					INNER JOIN Especie AS E
 						ON E.idEspecie = A.Especie_idEspecie
-	WHERE T.idTipo=4;
+	WHERE T.idTipo=idTipo
+    GROUP BY E.idEspecie;
 END $$
-Error Code: 1055. Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bd_zoologico.Z.nome' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 
 -- ---------------------------------QUERY 8--------------------------------------
 -- Consultar quantos animais, existem em cada bioma do jardim zoológico --
