@@ -166,19 +166,23 @@ SELECT E.nome_comum AS NomeComum, E.nome_cientifico AS NomeCientifico, Z.nome AS
 					ON A.Recinto_ID = R.ID 
 					INNER JOIN Especie AS E
 						ON E.idEspecie = A.Especie_idEspecie
-	WHERE T.idTipo=4
-    GROUP BY E.idEspecie;
+	WHERE T.idTipo=4;
 END $$
+Error Code: 1055. Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bd_zoologico.Z.nome' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 
 -- ---------------------------------QUERY 8--------------------------------------
 -- Consultar quantos animais, existem em cada bioma do jardim zoológico --
 -- ------------------------------------------------------------------------------
 
-CREATE VIEW vwNAnimaisBioma AS
-	SELECT bioma AS Bioma, SUM(A.vivo) AS NAnimaisVivos ,SUM(CASE WHEN A.vivo=0 THEN 1 ELSE 0 END)AS NAnimaisMortos
-		FROM Recinto as R INNER JOIN Animal AS A
-		ON R.ID = A.Recinto_ID
-		GROUP BY bioma;
+DELIMITER $$
+CREATE PROCEDURE nAnimaisPorBioma
+	()
+BEGIN
+SELECT bioma AS Bioma, SUM(A.vivo) AS NAnimaisVivos ,SUM(CASE WHEN A.vivo=0 THEN 1 ELSE 0 END)AS NAnimaisMortos
+	FROM Recinto as R INNER JOIN Animal AS A
+	ON R.ID = A.Recinto_ID
+	GROUP BY bioma;
+END $$
 
 -- --------------------QUERY 9------------------------
 -- Calcular o TOP 3 tipo de bilhetes mais comprados --
@@ -241,9 +245,14 @@ END $$
 -- Saber o crescimento de visitas anual  --
 -- ----------------------------------------
 
+DELIMITER $$
+CREATE PROCEDURE aumentoVisitasPorAno
+	()
+BEGIN
 SELECT Ano, NumeroBilhetes, ((NumeroBilhetes-NumeroBilhetesAnterior)/NumeroBilhetesAnterior)*100 AS CrescimentoPercentagem
 	FROM vwNbilhetesAnos;
-    
+END $$   
+
 -- --------------------------QUERY 14-----------------------------
 -- Saber que veterinarios administraram qual vacina a um animal --
 -- ---------------------------------------------------------------

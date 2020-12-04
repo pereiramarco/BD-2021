@@ -19,6 +19,27 @@ INSERT INTO Tipo VALUES (4,"Paraíso Submerso",16.2);
 INSERT INTO Tipo VALUES (5,"Acesso Total",30.4);
 INSERT INTO Tipo VALUES (6,"Criança",10.4);
 
+INSERT INTO Tipo_has_Zona VALUES (1,1);
+INSERT INTO Tipo_has_Zona VALUES (1,5);
+INSERT INTO Tipo_has_Zona VALUES (2,5);
+INSERT INTO Tipo_has_Zona VALUES (3,5);
+INSERT INTO Tipo_has_Zona VALUES (4,5);
+INSERT INTO Tipo_has_Zona VALUES (5,5);
+INSERT INTO Tipo_has_Zona VALUES (6,5);
+INSERT INTO Tipo_has_Zona VALUES (7,5);
+INSERT INTO Tipo_has_Zona VALUES (8,5);
+INSERT INTO Tipo_has_Zona VALUES (9,5);
+INSERT INTO Tipo_has_Zona VALUES (7,4);
+INSERT INTO Tipo_has_Zona VALUES (9,4);
+INSERT INTO Tipo_has_Zona VALUES (4,3);
+INSERT INTO Tipo_has_Zona VALUES (2,2);
+INSERT INTO Tipo_has_Zona VALUES (3,2);
+INSERT INTO Tipo_has_Zona VALUES (4,2);
+INSERT INTO Tipo_has_Zona VALUES (5,2);
+INSERT INTO Tipo_has_Zona VALUES (6,2);
+INSERT INTO Tipo_has_Zona VALUES (7,2);
+INSERT INTO Tipo_has_Zona VALUES (8,2);
+
 INSERT INTO Vacina VALUES (1,"Vacina de Temperamento"); -- dog like animals and bears  -- 21,50,36
 INSERT INTO Vacina VALUES (2,"Vacina da Raiva"); -- all
 INSERT INTO Vacina VALUES (3,"Vacina da Panleukopenia"); -- cat like animals -- 1,2,5,16,17,40,48
